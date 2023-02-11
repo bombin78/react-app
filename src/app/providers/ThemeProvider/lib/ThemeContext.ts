@@ -1,4 +1,6 @@
-import { createContext } from "react";
+// Выяснить где в действительность должен находиться этот контекст
+// Один из вариантов, что он должен в папке shared/config
+import { createContext } from 'react';
 
 
 export enum Theme {

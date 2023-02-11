@@ -21,7 +21,10 @@
 	// Компилятор обрабатывает не только TS файлы, но и JS файлы
     "allowJs": true,
 	// Для абсолютного импорта
-	// "baseUrl": ".",
+	"baseUrl": ".",
+	"paths": {
+		"*": ["./src/*"]
+	},
 	// moduleResolution определяет какие модули будут
     "moduleResolution": "node",
 	// esModuleInterop позволяет работать с пакетами, которые

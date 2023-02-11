@@ -23,7 +23,7 @@ export function buildWebpackConfig(
       clean: true,
     },
 
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
 
     module: {
       // Конфигурация лоадеров, которые предназначены
