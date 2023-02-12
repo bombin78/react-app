@@ -5,10 +5,6 @@ import {
 	Routes,
 	Route,
 } 								from 'react-router-dom';
-import { useTheme } 			from 'app/providers/ThemeProvider';
-import { classNames } 			from 'shared/lib/classNames/classNames';
-import { AboutPage } 			from 'pages/AboutPage';
-import { MainPage } 			from 'pages/MainPage'
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 
 const AppRouter = () => {
