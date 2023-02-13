@@ -2,15 +2,25 @@ import { RuleSetRule } from 'webpack';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
-// type getLocalIdent = (
-//   context: LoaderContext,
-//   localIdentName: string,
-//   localName: string
-// ) => string;
-export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
+export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+  // https://v4.webpack.js.org/loaders/file-loader/
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: 'file-loader',
+      },
+    ],
+  };
 
-  // Например, в дев режиме сначала выполнится 'sass-loader', затем 
-  // 'css-loader' для импорта стилей и в конце 'style-loader' внедрит 
+  // https://www.npmjs.com/package/@svgr/webpack
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  // Например, в дев режиме сначала выполнится 'sass-loader', затем
+  // 'css-loader' для импорта стилей и в конце 'style-loader' внедрит
   // стили в DOM
   const cssLoader = {
     test: /\.s[ac]ss$/i,
@@ -38,7 +48,7 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  // Если бы писали на нативном js, то для обработки jsx понадобился бы 
+  // Если бы писали на нативном js, то для обработки jsx понадобился бы
   // babel-loader. Но ts-loader умеет обрабатывать jsx самостоятельно
   const typeScriptLoader = {
     test: /\.tsx?$/,
@@ -48,7 +58,9 @@ export function buildLoaders({isDev}: BuildOptions): RuleSetRule[] {
 
   // Порядок при котором лоадеры возвращаются в массиве use имеет значение
   return [
-    cssLoader,
-	  typeScriptLoader,
+    fileLoader, 
+    svgLoader, 
+    cssLoader, 
+    typeScriptLoader
   ];
 }
