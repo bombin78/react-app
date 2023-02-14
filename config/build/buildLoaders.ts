@@ -4,6 +4,7 @@ import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
   // https://v4.webpack.js.org/loaders/file-loader/
+  // https://webpack.js.org/guides/asset-modules/
   const fileLoader = {
     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
     use: [
