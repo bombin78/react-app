@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+
   // https://v4.webpack.js.org/loaders/file-loader/
   // https://webpack.js.org/guides/asset-modules/
   const fileLoader = {
@@ -20,11 +21,35 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     use: ['@svgr/webpack'],
   };
 
+  // https://babeljs.io/setup#installation
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+        // https://i18next-extract.netlify.app/#
+        // https://i18next-extract.netlify.app/#/configuration?id=locales
+        'plugins': [
+          [
+            'i18next-extract',
+            {
+              locales: ['ru', 'en'],
+              keyAsDefaultValue: true,
+            }
+          ],
+        ]
+      }
+    }
+  };
+
   // Например, в дев режиме сначала выполнится 'sass-loader', затем
   // 'css-loader' для импорта стилей и в конце 'style-loader' внедрит
   // стили в DOM
   const cssLoader = {
     test: /\.s[ac]ss$/i,
+    // Порядок при котором лоадеры указываются в массиве 'use' имеет значение
     use: [
       isDev
         // Creates `style` nodes from JS strings
@@ -57,11 +82,12 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     exclude: /node_modules/,
   };
 
-  // Порядок при котором лоадеры возвращаются в массиве use имеет значение
+  // Порядок при котором лоадеры возвращаются в массиве имеет значение
   return [
-    fileLoader, 
-    svgLoader, 
-    cssLoader, 
-    typeScriptLoader
+    fileLoader,
+    svgLoader,
+    babelLoader,
+    typeScriptLoader,
+    cssLoader,
   ];
 }
