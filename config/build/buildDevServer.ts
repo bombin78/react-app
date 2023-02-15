@@ -12,5 +12,7 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
 		historyApiFallback: true,
 		// Для автоматического открытия страницы в браузере
 		open: true,
+		// Включаем HMR
+		hot: true,
 	};
 }
