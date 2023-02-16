@@ -1,10 +1,9 @@
 import {
-	AppLink,
-	AppLinkTheme,
-} 						from "./ui/AppLink";
-
+    AppLink,
+    AppLinkTheme,
+} 						from './ui/AppLink';
 
 export {
-	AppLink,
-	AppLinkTheme,
+    AppLink,
+    AppLinkTheme,
 };

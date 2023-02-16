@@ -1,10 +1,9 @@
 import {
-	Button,
-	ThemeButton,
-} 						from "./ui/Button";
-
+    Button,
+    ThemeButton,
+} 						from './ui/Button';
 
 export {
-	Button,
-	ThemeButton,
+    Button,
+    ThemeButton,
 };

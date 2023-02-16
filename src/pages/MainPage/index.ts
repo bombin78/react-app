@@ -2,7 +2,6 @@
 // его можно было переносить без дополнительных правок
 import { MainPageAsync } from './ui/MainPage.async';
 
-
 export {
-	MainPageAsync as MainPage,
+    MainPageAsync as MainPage,
 };
