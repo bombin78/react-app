@@ -1,5 +1,4 @@
-// Настройка eslint в VS code:
-// Preferences -> Settings -> User -> Extensions -> ESLint -> Edit in settings.json
+// Настройка eslint и stylelint в VS code: .vscode/settings.json
 module.exports = {
     env: {
         browser: true,
@@ -7,6 +6,7 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
+        'plugin:i18next/recommended',
         'airbnb',
     ],
     parser: '@typescript-eslint/parser',
@@ -20,6 +20,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         // Устанавливаем определенный стиль отступа (4 пробела) для обычного когда.
@@ -57,6 +58,9 @@ module.exports = {
         'import/extensions': 'off',
         // Чтобы не ругался на импорт 'webpack' в файле buildWebpackConfig.ts
         'import/no-extraneous-dependencies': 'off',
+        // Настраиваем "eslint-plugin-i18next", чтобы он ругался на отсутствие переводов
+        // только внутри jsx
+        'i18next/no-literal-string': ['error', { markupOnly: true }],
     },
     globals: {
         __IS_DEV__: true,
