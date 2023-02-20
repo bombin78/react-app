@@ -62,6 +62,8 @@ module.exports = {
         // Настраиваем "eslint-plugin-i18next", чтобы он ругался на отсутствие переводов
         // только внутри jsx
         'i18next/no-literal-string': ['error', { markupOnly: true }],
+        // Проверка максимальной длины: отключаем проверку комментариев
+        'max-len': [2, { ignoreComments: true }],
     },
     globals: {
         __IS_DEV__: true,
