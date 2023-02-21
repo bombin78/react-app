@@ -1,4 +1,7 @@
 {
-	"language": "Русский",
-	"page not found": "Страница не найдена"
+	"language": "English",
+	"page not found": "Страница не найдена",
+	"toggle": "toggle",
+	"mainLinkName": "Главная",
+	"aboutLinkName": "О компании"
 }

@@ -1,4 +1,5 @@
 import { classNames } 	from 'shared/lib/classNames/classNames';
+import { Loader } from 'shared/ui/Loader';
 import cls 				from './PageLoader.module.scss';
 
 interface PageLoaderProps {
@@ -7,12 +8,6 @@ interface PageLoaderProps {
 
 export const PageLoader = ({ className }: PageLoaderProps) => (
     <div className={classNames(cls.pageLoader, {}, [className])}>
-        {/* https://loading.io/css/ */}
-        <div className={cls.ldsEllipsis}>
-            <div />
-            <div />
-            <div />
-            <div />
-        </div>
+        <Loader />
     </div>
 );

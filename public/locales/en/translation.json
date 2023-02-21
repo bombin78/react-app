@@ -1,4 +1,7 @@
 {
-  "language": "English",
-  "page not found": "Page not found"
+  "language": "Русский",
+  "page not found": "Page not found",
+  "toggle": "toggle",
+  "mainLinkName": "Main",
+  "aboutLinkName": "About us"
 }

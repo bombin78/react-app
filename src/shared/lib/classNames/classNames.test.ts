@@ -7,7 +7,11 @@ describe('classNames', () => {
 
     test('№2 with additional class', () => {
         const expected = 'someClass class1 class2';
-        expect(classNames('someClass', {}, ['class1', 'class2'])).toBe(expected);
+        expect(classNames(
+            'someClass',
+            {},
+            ['class1', 'class2'],
+        )).toBe(expected);
     });
 
     test('№3 with mods at the end', () => {

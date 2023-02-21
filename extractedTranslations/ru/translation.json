@@ -1,6 +1,9 @@
 {
+  "aboutLinkName": "aboutLinkName",
   "aboutPage": "aboutPage",
   "language": "language",
+  "mainLinkName": "mainLinkName",
   "mainPage": "mainPage",
-  "page not found": "page not found"
+  "page not found": "page not found",
+  "toggle": "toggle"
 }
