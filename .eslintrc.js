@@ -29,9 +29,15 @@ module.exports = {
         // Устанавливаем определенный стиль отступа (4 пробела) для JSX.
         'react/jsx-indent': [2, 4],
         // Устанавливаем определенный стиль отступа (4 пробела) для props в JSX.
-        'react/jsx-indent-props': [2, { indentMode: 4, ignoreTernaryOperator: true }],
+        'react/jsx-indent-props': [
+            2,
+            { indentMode: 4, ignoreTernaryOperator: true },
+        ],
         // Указываем расширения в которых разрешен jsx
-        'react/jsx-filename-extension': [2, { extensions: ['js', 'jsx', 'ts', 'tsx'] }],
+        'react/jsx-filename-extension': [
+            2,
+            { extensions: ['js', 'jsx', 'ts', 'tsx'] },
+        ],
         // Отключаем проверку импортов
         'import/no-unresolved': 'off',
         // Отключаем предпочтительное использование дефолтного экспорта
