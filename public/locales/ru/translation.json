@@ -3,5 +3,8 @@
 	"page not found": "Страница не найдена",
 	"toggle": "toggle",
 	"mainLinkName": "Главная",
-	"aboutLinkName": "О компании"
+	"aboutLinkName": "О компании",
+	"pageErrorText": "Произошла непредвиденная ошибка",
+  	"reloadPage": "Обновить страницу",
+	"throwError": "Выбросить ошибку"
 }

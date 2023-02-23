@@ -3,5 +3,8 @@
   "page not found": "Page not found",
   "toggle": "toggle",
   "mainLinkName": "Main",
-  "aboutLinkName": "About us"
+  "aboutLinkName": "About us",
+  "pageErrorText": "An unexpected error has occurred",
+  "reloadPage": "Refresh the page",
+  "throwError": "throw an error"
 }

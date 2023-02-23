@@ -4,6 +4,11 @@
   "language": "language",
   "mainLinkName": "mainLinkName",
   "mainPage": "mainPage",
+  "page error text": "page error text",
   "page not found": "page not found",
+  "pageErrorText": "pageErrorText",
+  "refresh the page": "refresh the page",
+  "reloadPage": "reloadPage",
+  "throwError": "throwError",
   "toggle": "toggle"
 }
