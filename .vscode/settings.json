@@ -3,11 +3,13 @@
     "languagedetector",
     "stylelint",
     "svgr",
+    "testid",
     "алиасов",
     "Алиасы",
     "лоадеров",
     "лоадеры",
     "одностраничных",
+    "скриншотные",
     "табов"
   ],
   "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],

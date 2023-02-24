@@ -61,13 +61,24 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         // Настраиваем "eslint-plugin-i18next", чтобы он ругался на отсутствие переводов
         // только внутри jsx
-        'i18next/no-literal-string': [2, { markupOnly: true }],
+        'i18next/no-literal-string': [2, {
+            markupOnly: true,
+            ignoreAttribute: ['data-testid', 'to'],
+        }],
         // Проверка максимальной длины: отключаем проверку комментариев
         'max-len': [2, { ignoreComments: true, code: 100 }],
     },
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
     // settings: {
     //     react: {
     //         version: 'detect',

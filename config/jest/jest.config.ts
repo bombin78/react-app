@@ -3,26 +3,31 @@
  * https://jestjs.io/docs/configuration
  */
 
+import path from 'path';
+
 export default {
 
     // Automatically clear mock calls, instances and results before every test
+    // Автоматически очищайте фиктивные вызовы, экземпляры и результаты перед каждым тестом
     clearMocks: true,
 
     // The test environment that will be used for testing
+    // Тестовая среда, которая будет использоваться для тестирования
     testEnvironment: 'jsdom',
 
     // An array of regexp pattern strings used to skip coverage collection
+    // Массив строк шаблона регулярного выражения, используемых для пропуска сбора покрытия
     coveragePathIgnorePatterns: [
         '/node_modules/',
     ],
 
-    // An array of directory names to be searched recursively up from the requiring
-    // module's location
+    // An array of directory names to be searched recursively up from the requiring module's location
+    // Массив имен каталогов для рекурсивного поиска вверх от местоположения требуемого модуля
     moduleDirectories: [
         'node_modules',
     ],
 
-    // An array of file extensions your modules use
+    // Массив расширений файлов, используемых вашими модулями
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -30,6 +35,26 @@ export default {
         'tsx',
         'json',
         'node',
+    ],
+
+    // A map from regular expressions to module names or to arrays of module names that allow
+    // to stub out resources with a single module
+    moduleNameMapper: {
+        '\\.(s?css)$': 'identity-obj-proxy',
+        // jestEmptyComponent.tsx - своего рода mock, которым заменяем все импортируемые компоненты
+        // с расширением.svg на компонент <div />. На иконки svg будут писаться отдельные скриншотные тесты.
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
+
+    // Чтобы работали абсолютные пути в файлах тестов
+    modulePaths: [
+        '<rootDir>src',
+    ],
+
+    // A list of paths to modules that run some code to configure or set up the testing framework before each test
+    // Список путей к модулям, которые запускают некоторый код для настройки фреймворка тестирования перед каждым тестом
+    setupFilesAfterEnv: [
+        '<rootDir>/config/jest/setupTests.ts',
     ],
 
     // The root directory that Jest should scan for tests and modules within
@@ -98,10 +123,6 @@ export default {
     // maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",
 
-    // A map from regular expressions to module names or to arrays of module names that allow
-    // to stub out resources with a single module
-    // moduleNameMapper: {},
-
     // An array of regexp pattern strings, matched against all module paths before considered
     // 'visible' to the module loader
     // modulePathIgnorePatterns: [],
@@ -144,10 +165,6 @@ export default {
     // The paths to modules that run some code to configure or set up the testing environment
     // before each test
     // setupFiles: [],
-
-    // A list of paths to modules that run some code to configure or set up the testing framework
-    // before each test
-    // setupFilesAfterEnv: [],
 
     // The number of seconds after which a test is considered as slow and reported as such
     // in the results.
