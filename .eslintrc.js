@@ -60,7 +60,7 @@ module.exports = {
         // Чтобы не ругался на импорт 'webpack' в файле buildWebpackConfig.ts
         'import/no-extraneous-dependencies': 'off',
         // Настраиваем "eslint-plugin-i18next", чтобы он ругался на отсутствие переводов
-        // только внутри jsx
+        // только внутри jsx (внутри jsx, за исключением атрибутов: 'data-testid', 'to')
         'i18next/no-literal-string': [2, {
             markupOnly: true,
             ignoreAttribute: ['data-testid', 'to'],
@@ -68,10 +68,13 @@ module.exports = {
         // Проверка максимальной длины: отключаем проверку комментариев
         'max-len': [2, { ignoreComments: true, code: 100 }],
     },
+    // Список глобальных переменных
     globals: {
         __IS_DEV__: true,
     },
+    // Переопределение правил для указанного типа файлов
     overrides: [
+        // Отключаем вывод ошибок при указании текстов в тестовых файлах
         {
             files: ['**/src/**/*.test.{ts,tsx}'],
             rules: {

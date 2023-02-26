@@ -11,7 +11,9 @@
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
-    "unit": "jest --config ./config/jest/jest.config.ts"
+    "unit": "jest --config ./config/jest/jest.config.ts",
+    "storybook": "start-storybook -p 6006 -c ./config/storybook",
+    "build-storybook": "build-storybook -c ./config/storybook"
   },
   "keywords": [],
   "author": "",
@@ -90,5 +92,13 @@
     "react-i18next": "^11.15.5",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1"
+  },
+  "resolutions": {
+    "@storybook/react@npm:9.5.0/webpack": "^5.69.1",
+    "@storybook/react/webpack": "^5",
+    "@storybook/core-common/webpack": "^5",
+    "@storybook/core-server/webpack": "^5",
+    "@storybook/builder-webpack4/webpack": "^5",
+    "@storybook/manager-webpack4/webpack": "^5"
   }
 }
