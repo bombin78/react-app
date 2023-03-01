@@ -1,11 +1,27 @@
-# react-app-2023
+# React-app-2023
 
-## start loki
-### start the storybook server
+## Lints and fixes files
+```
+lint:ts:fix
+lint:scss:fix
+```
+
+## Run the storybook
 ```
 npm run storybook
 ```
-### run tests
+
+## Unit testing (Jest and React Testing Library)
+```
+npm run unit
+```
+
+## Regression testing (Loki)
+### Run the storybook server
+```
+npm run storybook
+```
+### Run tests
 ```
 npx loki test
 ```
