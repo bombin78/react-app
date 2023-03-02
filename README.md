@@ -13,7 +13,7 @@ npm run storybook
 
 ## Unit testing (Jest and React Testing Library)
 ```
-npm run unit
+npm run test:unit
 ```
 
 ## Regression testing (Loki)
@@ -23,5 +23,5 @@ npm run storybook
 ```
 ### Run tests
 ```
-npx loki test
+npm run test:ui
 ```
