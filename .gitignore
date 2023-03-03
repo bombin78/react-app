@@ -1,3 +1,4 @@
 .vscode/react-app-2023.code-snippets
 /build
 /node_modules
+/storybook-static
