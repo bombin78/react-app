@@ -1,9 +1,9 @@
 import {
     Button,
-    ThemeButton,
+    ButtonTheme,
 } 						from './ui/Button';
 
 export {
     Button,
-    ThemeButton,
+    ButtonTheme,
 };
