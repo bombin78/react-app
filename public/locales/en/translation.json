@@ -6,5 +6,6 @@
   "aboutLinkName": "About us",
   "pageErrorText": "An unexpected error has occurred",
   "reloadPage": "Refresh the page",
-  "throwError": "throw an error"
+  "throwError": "throw an error",
+  "login": "Login"
 }

@@ -22,6 +22,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'react-hooks',
     ],
     rules: {
         // Устанавливаем определенный стиль отступа (4 пробела) для обычного когда.
@@ -67,6 +68,13 @@ module.exports = {
         }],
         // Проверка максимальной длины: отключаем проверку комментариев
         'max-len': [2, { ignoreComments: true, code: 100 }],
+        // Отключаем два правила (jsx-a11y) для проверки семантики
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        // Проверяет правила использования hooks
+        'react-hooks/rules-of-hooks': 'error',
+        // Проверяет зависимости эффектов
+        'react-hooks/exhaustive-deps': 'error',
     },
     // Список глобальных переменных
     globals: {
@@ -76,9 +84,10 @@ module.exports = {
     overrides: [
         // Отключаем вывод ошибок при указании текстов в тестовых файлах
         {
-            files: ['**/src/**/*.test.{ts,tsx}'],
+            files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
             rules: {
                 'i18next/no-literal-string': 'off',
+                'max-len': 'off',
             },
         },
     ],
