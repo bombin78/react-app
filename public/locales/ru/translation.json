@@ -6,5 +6,6 @@
 	"aboutLinkName": "О компании",
 	"pageErrorText": "Произошла непредвиденная ошибка",
   	"reloadPage": "Обновить страницу",
-	"throwError": "Выбросить ошибку"
+	"throwError": "Выбросить ошибку",
+	"login": "Войти"
 }
