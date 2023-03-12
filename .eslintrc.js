@@ -71,7 +71,7 @@ module.exports = {
         // Отключаем два правила (jsx-a11y) для проверки семантики
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
-        // Проверяет правила использования hooks
+        // Проверяет правила использования хуков (hooks)
         'react-hooks/rules-of-hooks': 'error',
         // Проверяет зависимости эффектов
         'react-hooks/exhaustive-deps': 'error',
