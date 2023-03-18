@@ -7,5 +7,7 @@
   "pageErrorText": "An unexpected error has occurred",
   "reloadPage": "Refresh the page",
   "throwError": "throw an error",
-  "login": "Login"
+  "login": "Login",
+  "increment": "Increment",
+  "decrement": "Decrement"
 }

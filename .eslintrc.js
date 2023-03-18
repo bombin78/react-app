@@ -75,6 +75,8 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         // Проверяет зависимости эффектов
         'react-hooks/exhaustive-deps': 'error',
+        // Отключаем запрет на переназначения параметров так как используем redux-toolkit
+        'no-param-reassign': 'off',
     },
     // Список глобальных переменных
     globals: {
