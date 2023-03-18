@@ -1,0 +1,40 @@
+{
+	"Create custom react function component": {
+		"scope": "typescriptreact",
+		"prefix": ["prfc"],
+		"body": [
+			"import { FC } from 'react';",
+			"import { classNames } from 'shared/lib/classNames/classNames';",
+			"import cls from './${TM_FILENAME_BASE}.module.scss';",
+			"",
+			"interface ${TM_FILENAME_BASE}Props {",
+				"\tclassName?: string;",
+			"}",
+			"",
+			"export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
+				"\tconst { className } = props;",
+				"",
+				"\treturn (",
+					"\t\t<div className={classNames(cls.${TM_FILENAME_BASE/(^.)/${1:/downcase}/}, {}, [className])}>",
+						"\t\t\t$0",
+					"\t\t<\/div>",
+				"\t);",
+			"};",
+			"",
+		],
+		"description": "Создать React-компонент по умолчанию. Импортируется scss-модуль и функция для работы c классами classNames."
+	},
+	"Create test": {
+		"scope": "typescript, typescriptreact",
+		"prefix": "tst",
+		"body": [
+			"describe('$TM_FILENAME_BASE', () => {",
+			"\ttest('$1', () => {",
+			"\t\texpect().toEqual();",
+			"\t});",
+			"});",
+			"",
+		],
+		"description": "Create template test"
+	} 
+}
