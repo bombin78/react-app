@@ -2,6 +2,8 @@
   "aboutLinkName": "aboutLinkName",
   "aboutPage": "aboutPage",
   "decrement": "decrement",
+  "enterPassword": "enterPassword",
+  "enterUsername": "enterUsername",
   "increment": "increment",
   "language": "language",
   "login": "login",

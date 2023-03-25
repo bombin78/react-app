@@ -9,5 +9,7 @@
 	"throwError": "Выбросить ошибку",
 	"login": "Войти",
 	"increment": "Добавить 1",
-	"decrement": "Вычесть 1"
+	"decrement": "Вычесть 1",
+	"enterUsername": "Введите имя пользователя",
+	"enterPassword": "Введите пароль"
 }
