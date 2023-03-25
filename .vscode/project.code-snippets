@@ -4,6 +4,7 @@
 		"prefix": ["prfc"],
 		"body": [
 			"import { FC } from 'react';",
+			"import { useTranslation } from 'react-i18next';",
 			"import { classNames } from 'shared/lib/classNames/classNames';",
 			"import cls from './${TM_FILENAME_BASE}.module.scss';",
 			"",
@@ -13,6 +14,7 @@
 			"",
 			"export const ${TM_FILENAME_BASE}: FC<${TM_FILENAME_BASE}Props> = (props) => {",
 				"\tconst { className } = props;",
+				"\tconst { t } = useTranslation();",
 				"",
 				"\treturn (",
 					"\t\t<div className={classNames(cls.${TM_FILENAME_BASE/(^.)/${1:/downcase}/}, {}, [className])}>",
