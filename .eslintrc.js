@@ -67,7 +67,7 @@ module.exports = {
             ignoreAttribute: ['data-testid', 'to'],
         }],
         // Проверка максимальной длины: отключаем проверку комментариев
-        'max-len': [2, { ignoreComments: true, code: 100 }],
+        'max-len': [2, { ignoreComments: true, code: 120 }],
         // Отключаем два правила (jsx-a11y) для проверки семантики
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
