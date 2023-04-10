@@ -8,8 +8,11 @@
   "reloadPage": "Refresh the page",
   "throwError": "throw an error",
   "login": "Login",
+  "logout": "Logout",
   "increment": "Increment",
   "decrement": "Decrement",
   "enterUsername": "Enter username",
-  "enterPassword": "Enter password"
+  "enterPassword": "Enter password",
+  "authorizationForm": "Authorization form",
+  "loginError": "You have entered an incorrect username or password"
 }

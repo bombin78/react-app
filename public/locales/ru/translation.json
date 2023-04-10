@@ -8,8 +8,11 @@
   	"reloadPage": "Обновить страницу",
 	"throwError": "Выбросить ошибку",
 	"login": "Войти",
+	"logout": "Выйти",
 	"increment": "Добавить 1",
 	"decrement": "Вычесть 1",
 	"enterUsername": "Введите имя пользователя",
-	"enterPassword": "Введите пароль"
+	"enterPassword": "Введите пароль",
+	"authorizationForm": "Форма авторизации",
+	"loginError": "Вы ввели неверный логин или пароль"
 }
