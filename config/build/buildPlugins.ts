@@ -26,14 +26,17 @@ export function buildPlugins({
         }),
     ];
 
+    plugins.push(
+        // Плагин для визуализации размер выходных файлов веб-пакета с помощью
+        // интерактивной масштабируемой древовидной карты
+        new BundleAnalyzerPlugin({
+            openAnalyzer: false,
+        }),
+    );
+
     if (isDev) {
         plugins.push(
             new webpack.HotModuleReplacementPlugin(),
-            // Плагин для визуализации размер выходных файлов веб-пакета с помощью
-            // интерактивной масштабируемой древовидной карты
-            new BundleAnalyzerPlugin({
-                openAnalyzer: false,
-            }),
         );
     }
 

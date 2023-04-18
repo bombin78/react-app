@@ -9,6 +9,7 @@
   "increment": "increment",
   "language": "language",
   "login": "login",
+  "loginError": "loginError",
   "logout": "logout",
   "mainLinkName": "mainLinkName",
   "mainPage": "mainPage",
