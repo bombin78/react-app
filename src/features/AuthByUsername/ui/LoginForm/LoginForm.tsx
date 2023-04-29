@@ -7,7 +7,7 @@ import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
+import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword';
@@ -42,7 +42,7 @@ const LoginForm = memo((props: LoginFormProps) => {
     }, [dispatch]);
 
     const onLoginClick = useCallback(() => {
-        dispatch(loginByUserName({ username, password }));
+        dispatch(loginByUsername({ username, password }));
     }, [dispatch, username, password]);
 
     return (
