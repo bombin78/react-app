@@ -37,9 +37,14 @@ module.exports = {
         'import/no-unresolved': 'off',
         // Отключаем предпочтительное использование дефолтного экспорта
         'import/prefer-default-export': 'off',
-        // Устанавливаем предупреждение для неиспользуемых переменных
-        // По умолчанию это правило вернет ошибку
-        'no-unused-vars': 'warn',
+        // Предупреждение для неиспользуемых переменных:
+        // делегируем эту проверку в typescript ('@typescript-eslint/no-unused-vars'),
+        // которую в свою очередь временно отключим !!!
+        'no-unused-vars': 'off',
+        // '@typescript-eslint/no-unused-vars': [
+        //     'error',
+        //     { argsIgnorePattern: '^_' },
+        // ],
         // Отключаем проверку типа функции для функциональных компонентов, чтобы
         // можно было использовать стрелочные функции для именованных компонентов
         'react/function-component-definition': 'off',
