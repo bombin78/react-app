@@ -10,16 +10,22 @@ interface LoginByUsernameProps {
 
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string } >(
     'login/loginByUsername',
-    async (authData, thunkAPI) => {
+    async (authData, {
+        // Деструктуризация thunkAPI
+        dispatch,
+        extra,
+        rejectWithValue,
+    }) => {
         try {
-            const response = await axios.post<User>('http://localhost:8000/login', authData);
+            // @ts-ignore
+            const response = await extra.api.post<User>('/login', authData);
             // Если с сервера вернулся пустой ответ, то будем считать, что это ошибка
             if (!response.data) {
                 throw new Error();
             }
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            thunkAPI.dispatch(userActions.setAuthData(response.data));
+            dispatch(userActions.setAuthData(response.data));
 
             // По умолчанию, возвращаемые данные оборачиваются в thunkAPI.fulfillWithValue()
             return response.data;
@@ -28,7 +34,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { re
             // Используйте "e.response.data" в качестве "action.payload" для "rejected"
             // действия, явно возвращая его с помощью утилиты "rejectWithValue()":
             // thunkAPI.rejectWithValue(e.response.data);
-            return thunkAPI.rejectWithValue('error');
+            return rejectWithValue('error');
         }
     },
 );
