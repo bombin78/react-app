@@ -15,5 +15,14 @@
 		  "password": "123"
 		}
 	],
-	"profile": { "name": "typecode" }
+	"profile": {
+		"first": "Ivan",
+		"lastname": "Ivanov",
+		"age": 45,
+		"currency": "RUB",
+		"country": "Russia",
+		"city": "Saint Petersburg",
+		"username": "admin",
+		"avatar": "https://avt-8.foto.mail.ru/mail/nyu_igor_83/_avatar180?"
+	}
 }

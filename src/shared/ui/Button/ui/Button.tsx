@@ -1,6 +1,8 @@
 import {
     FC,
     ButtonHTMLAttributes,
+    memo,
+    ReactNode,
 } 							from 'react';
 import { classNames } 		from 'shared/lib/classNames/classNames';
 import cls 					from './Button.module.scss';
@@ -25,9 +27,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     size?: ButtonSize;
     disabled?: boolean;
+    // В react 18 надо будет указывать это свойство отдельно, т.к его нет в типе "FC"
+    children?: ReactNode;
 }
 
-export const Button: FC<ButtonProps> = (props) => {
+// Предполагаю, что в подавляющем большинстве случает у этого компонента - children
+// будет строкой, поэтому здесь тоже использовал мемоизацию с помощью HOC memo().
+// !!! Уточнить, может ли в качестве children передаваться примитив или это всегда ссылочный
+// тип и будет ли работать memo(), если в качестве children передается ссылочный тип !!!
+export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     const {
         className,
         children,
@@ -55,4 +63,4 @@ export const Button: FC<ButtonProps> = (props) => {
             { children }
         </button>
     );
-};
+});

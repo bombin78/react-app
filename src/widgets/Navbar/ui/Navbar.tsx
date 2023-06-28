@@ -1,6 +1,6 @@
 import { getUserAuthData, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
-import { useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -11,7 +11,7 @@ interface NavbarProps {
 	className?: string;
 }
 
-export const Navbar = (props: NavbarProps) => {
+export const Navbar = memo((props: NavbarProps) => {
     const {
         className,
     } = props;
@@ -69,4 +69,4 @@ export const Navbar = (props: NavbarProps) => {
             /> */}
         </div>
     );
-};
+});

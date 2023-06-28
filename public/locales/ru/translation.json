@@ -4,6 +4,7 @@
 	"page not found": "Страница не найдена",
 	"mainLinkName": "Главная",
 	"aboutLinkName": "О компании",
+	"profileLinkName": "Профиль",
 	"pageErrorText": "Произошла непредвиденная ошибка",
   	"reloadPage": "Обновить страницу",
 	"throwError": "Выбросить ошибку",

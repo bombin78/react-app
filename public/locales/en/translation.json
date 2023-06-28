@@ -4,6 +4,7 @@
   "page not found": "Page not found",
   "mainLinkName": "Main",
   "aboutLinkName": "About us",
+  "profileLinkName": "Profile",
   "pageErrorText": "An unexpected error has occurred",
   "reloadPage": "Refresh the page",
   "throwError": "throw an error",
