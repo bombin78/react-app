@@ -9,6 +9,7 @@ import { BuildOptions } 	from './types/config';
 export function buildPlugins({
     paths,
     isDev,
+    apiUrl,
 }: BuildOptions): WebpackPluginInstance[] {
     const plugins = [
         new webpack.ProgressPlugin(),
@@ -23,6 +24,7 @@ export function buildPlugins({
         // в само приложение: https://webpack.js.org/plugins/define-plugin/
         new webpack.DefinePlugin({
             __IS_DEV__: JSON.stringify(isDev),
+            __API__: JSON.stringify(apiUrl),
         }),
     ];
 

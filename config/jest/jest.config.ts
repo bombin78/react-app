@@ -11,6 +11,7 @@ export default {
     // Набор глобальных переменных, которые должны быть доступны во всех тестовых средах
     globals: {
         __IS_DEV__: true,
+        __API__: '',
     },
 
     // Automatically clear mock calls, instances and results before every test
