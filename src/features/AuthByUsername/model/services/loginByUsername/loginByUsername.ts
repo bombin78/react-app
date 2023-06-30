@@ -8,6 +8,10 @@ interface LoginByUsernameProps {
 	password: string;
 }
 
+// Параметры дженерика:
+// первый - тип для того что возвращается,
+// второй - тип для аргументов,
+// третий - тип для конфигурации API.
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {
