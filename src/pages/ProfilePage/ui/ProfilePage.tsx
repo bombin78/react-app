@@ -1,4 +1,4 @@
-import { fetchProfileData, profileReducer } from 'entities/Profile';
+import { ProfileCard, fetchProfileData, profileReducer } from 'entities/Profile';
 import { FC, memo, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -29,7 +29,7 @@ const ProfilePage: FC<ProfilePageProps> = memo((props: ProfilePageProps) => {
             reducers={reducers}
         >
             <div className={classNames('', {}, [className])}>
-                {t('profilePage')}
+                <ProfileCard />
             </div>
         </DynamicModuleLoader>
 

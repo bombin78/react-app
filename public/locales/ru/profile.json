@@ -1,3 +1,5 @@
 {
-	"profilePage": "Страница профиля"
+	"profile.PageName": "Страница профиля",
+	"profile.Profile": "Профиль",
+	"profile.Edit": "Редактировать"
 }
