@@ -12,7 +12,11 @@ interface LoginByUsernameProps {
 // первый - тип для того что возвращается,
 // второй - тип для аргументов,
 // третий - тип для конфигурации API.
-export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, ThunkConfig<string>>(
+export const loginByUsername = createAsyncThunk<
+    User,
+    LoginByUsernameProps,
+    ThunkConfig<string>
+>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {
         const {
@@ -30,7 +34,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
             dispatch(userActions.setAuthData(response.data));
-            extra.navigate('/about');
 
             // По умолчанию, возвращаемые данные оборачиваются в thunkAPI.fulfillWithValue()
             return response.data;

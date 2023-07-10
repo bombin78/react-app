@@ -5,9 +5,7 @@ import { fetchProfileData } from '../services/fetchProfileData/fetchProfileData'
 const initialState = {
     readonly: true,
     isLoading: false,
-    // @ts-ignore
     error: undefined,
-    // @ts-ignore
     data: undefined,
 };
 

@@ -4,9 +4,10 @@ import React, {
     useRef,
     useState,
     useCallback,
+    MutableRefObject,
 } from 'react';
 import { useTheme } from 'app/providers/ThemeProvider';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -31,7 +32,13 @@ export const Modal = (props: ModalProps) => {
 
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef<ReturnType<typeof setTimeout>>();
+    // Первый вариант решения - добавление | null, чтобы задать изменяемый тип для
+    // результата useRef, в противном случае свойство timerRef.current будет readonly.
+    // const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+    // Второй вариант решения - это указание изменяемости через утверждение типа.
+    // Это позволяет не указывать значение null по умолчанию и избежать дополнительных
+    // проверок на null в дальнейшем (смотри ниже по коду).
+    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
     const { theme } = useTheme();
 
     useEffect(() => {
@@ -70,12 +77,19 @@ export const Modal = (props: ModalProps) => {
         }
 
         return () => {
+            // Для варианта с null необходимо сделать проверку на null
+            // (const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null))
+            // if (timerRef.current !== null) {
+            //     clearTimeout(timerRef.current);
+            //     window.removeEventListener('keydown', onKeyDown);
+            // }
+            // но мы сделали явное преобразование через as (смотри выше по коду)
             clearTimeout(timerRef.current);
             window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpen,
         [cls.isClosing]: isClosing,
     };
