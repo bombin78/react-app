@@ -1,7 +1,9 @@
 {
-  "profile.PageName": "Profile page",
-  "profile.Profile": "Profile",
-  "profile.Edit": "Edit",
-  "profile.Your name": "Your name",
-  "profile.Your last name": "Your last name"
+  "PageName": "Profile page",
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "YourName": "Your name",
+  "YourLastName": "Your last name",
+  "DataLoadingError": "An error occurred while loading the data",
+  "DataLoadingErrorTip": "Try refreshing the page"
 }

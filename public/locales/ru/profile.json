@@ -1,5 +1,9 @@
 {
-	"profile.PageName": "Страница профиля",
-	"profile.Profile": "Профиль",
-	"profile.Edit": "Редактировать"
+	"PageName": "Страница профиля",
+	"Profile": "Профиль",
+	"Edit": "Редактировать",
+	"YourName": "Ваше имя",
+	"YourLastName": "Ваша фамилия",
+	"DataLoadingError": "При загрузке данных произошла ошибка",
+	"DataLoadingErrorTip": "Попробуйте обновить страницу"
 }

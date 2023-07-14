@@ -1,26 +1,50 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useSelector } from 'react-redux';
-import { getProfileData } from 'entities/Profile/model/selectors/getProfileData/getProfileData';
-import { getProfileError } from 'entities/Profile/model/selectors/getProfileError/getProfileError';
-import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading/getProfileIsLoading';
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
+import { Loader } from 'shared/ui/Loader';
+import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import cls from './ProfileCard.module.scss';
+import { Profile } from '../../model/types/profile';
 
 interface ProfileCardProps {
 	className?: string;
+    data?: Profile;
+    isLoading?: boolean;
+    error?: string;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
-    const { className } = props;
+    const {
+        className,
+        data,
+        isLoading,
+        error,
+    } = props;
     const { t } = useTranslation('profile');
 
-    const data = useSelector(getProfileData);
-    const isLoading = useSelector(getProfileIsLoading);
-    const error = useSelector(getProfileError);
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.profileCard, {}, [className, cls.loading])}>
+                <Loader />
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+                <Text
+                    theme={TextTheme.ERROR}
+                    title={t('DataLoadingError')}
+                    text={t('DataLoadingErrorTip')}
+                    align={TextAlign.CENTER}
+                />
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.profileCard, {}, [className])}>
@@ -37,12 +61,12 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 <Input
                     className={cls.input}
                     value={data?.first}
-                    placeholder={t('Your name')}
+                    placeholder={t('YourName')}
                 />
                 <Input
                     className={cls.input}
                     value={data?.lastname}
-                    placeholder={t('Your last name')}
+                    placeholder={t('YourLastName')}
                 />
             </div>
         </div>
