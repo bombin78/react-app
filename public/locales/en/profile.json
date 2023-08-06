@@ -2,12 +2,15 @@
   "PageName": "Profile page",
   "Profile": "Profile",
   "Edit": "Edit",
-  "YourName": "Your name",
   "YourLastName": "Your last name",
   "DataLoadingError": "An error occurred while loading the data",
   "DataLoadingErrorTip": "Try refreshing the page",
   "Cancel": "Cancel",
   "Save": "Save",
+  "YourName": "Your name",
   "YourAge": "Your age",
-  "City": "City"
+  "City": "City",
+  "UserName": "Enter user name",
+  "AvatarLink": "Enter link to the avatar",
+  "ProfilePicture": "Profile picture"
 }

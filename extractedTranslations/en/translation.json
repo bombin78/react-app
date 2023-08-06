@@ -1,4 +1,5 @@
 {
+  "AvatarLink": "AvatarLink",
   "Cancel": "Cancel",
   "City": "City",
   "DataLoadingError": "DataLoadingError",
@@ -9,6 +10,7 @@
   "PageName1": "PageName1",
   "Profile": "Profile",
   "Save": "Save",
+  "UserName": "UserName",
   "Your last name": "Your last name",
   "Your name": "Your name",
   "YourAge": "YourAge",

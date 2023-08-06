@@ -2,12 +2,15 @@
 	"PageName": "Страница профиля",
 	"Profile": "Профиль",
 	"Edit": "Редактировать",
-	"YourName": "Ваше имя",
 	"YourLastName": "Ваша фамилия",
 	"DataLoadingError": "При загрузке данных произошла ошибка",
 	"DataLoadingErrorTip": "Попробуйте обновить страницу",
 	"Cancel": "Отменить",
 	"Save": "Сохранить",
+	"YourName": "Ваше имя",
 	"YourAge": "Ваш возраст",
-	"City": "Город"
+	"City": "Город",
+	"UserName": "Ведите имя пользователя",
+	"AvatarLink": "Введите ссылку на аватар",
+	"ProfilePicture": "Аватарка"
 }

@@ -55,6 +55,14 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ city: value || '' }));
     }, [dispatch]);
 
+    const onChangeUsername = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAvatar = useCallback((value?: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader
             removeAfterUnmount
@@ -71,6 +79,8 @@ const ProfilePage = memo((props: ProfilePageProps) => {
                     onChangeLastname={onChangeLastname}
                     onChangeAge={onChangeAge}
                     onChangeCity={onChangeCity}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
                 />
             </div>
         </DynamicModuleLoader>
