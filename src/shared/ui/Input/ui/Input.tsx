@@ -7,16 +7,17 @@ import {
     useEffect,
     useRef,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
 
 interface InputProps extends HTMLInputProps {
 	className?: string;
     value?: string;
     onChange?: (value: string) => void;
     autofocus?: boolean;
+    readonly?: boolean;
 }
 
 export const Input: FC<InputProps> = memo((props: InputProps) => {
@@ -27,12 +28,15 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
         type = 'text',
         placeholder,
         autofocus,
+        readonly,
         ...otherProps
     } = props;
 
     const [isFocused, setIsFocused] = useState(false);
     const [caretPosition, setCaretPosition] = useState(0);
     const ref = useRef<HTMLInputElement>(null);
+
+    const isCorrectVisible = isFocused && !readonly;
 
     useEffect(() => {
         if (autofocus) {
@@ -58,6 +62,10 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
         setCaretPosition(e?.target.selectionStart || 0);
     };
 
+    const mods: Mods = {
+        [cls.readonly]: readonly,
+    };
+
     return (
         <div className={classNames(cls.inputWrapper, {}, [className])}>
             {placeholder && (
@@ -75,9 +83,10 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
                     onBlur={onBlur}
                     onFocus={onFocus}
                     onSelect={onSelect}
+                    readOnly={readonly}
                     {...otherProps}
                 />
-                {isFocused && (
+                {isCorrectVisible && (
                     <span
                         className={cls.caret}
                         // Такой способ перемещения каретки работает не очень хорошо.
