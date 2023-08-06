@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import cls from './ProfilePageHeader.module.scss';
 
@@ -30,6 +30,10 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
 
+    const onSave = useCallback(() => {
+        dispatch(updateProfileData());
+    }, [dispatch]);
+
     return (
         <div className={classNames(cls.profilePageHeader, {}, [className])}>
             <Text title={t('Profile')} />
@@ -44,13 +48,22 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
                     </Button>
                 )
                 : (
-                    <Button
-                        className={cls.editBtn}
-                        theme={ButtonTheme.OUTLINE}
-                        onClick={onCancelEdit}
-                    >
-                        {t('Cancel')}
-                    </Button>
+                    <>
+                        <Button
+                            className={cls.cancelBtn}
+                            theme={ButtonTheme.OUTLINE_RED}
+                            onClick={onCancelEdit}
+                        >
+                            {t('Cancel')}
+                        </Button>
+                        <Button
+                            className={cls.saveBtn}
+                            theme={ButtonTheme.OUTLINE}
+                            onClick={onSave}
+                        >
+                            {t('Save')}
+                        </Button>
+                    </>
                 )}
         </div>
     );

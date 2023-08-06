@@ -10,12 +10,13 @@ import {
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import cls from './Input.module.scss';
 
-type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'>;
+type HTMLInputProps = Omit<InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'onKeyPress' | 'readOnly'>;
 
 interface InputProps extends HTMLInputProps {
 	className?: string;
-    value?: string;
+    value?: string | number;
     onChange?: (value: string) => void;
+    onKeyPress?: (value: any) => void;
     autofocus?: boolean;
     readonly?: boolean;
 }
@@ -25,6 +26,8 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
         className,
         value,
         onChange,
+        // Пробный вариант для возможности ограничения ввода данных
+        onKeyPress,
         type = 'text',
         placeholder,
         autofocus,
@@ -83,6 +86,8 @@ export const Input: FC<InputProps> = memo((props: InputProps) => {
                     onBlur={onBlur}
                     onFocus={onFocus}
                     onSelect={onSelect}
+                    // Пробный вариант для возможности ограничения ввода данных
+                    onKeyPress={onKeyPress}
                     readOnly={readonly}
                     {...otherProps}
                 />

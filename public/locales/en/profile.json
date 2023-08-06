@@ -6,5 +6,8 @@
   "YourLastName": "Your last name",
   "DataLoadingError": "An error occurred while loading the data",
   "DataLoadingErrorTip": "Try refreshing the page",
-  "Cancel": "Cancel"
+  "Cancel": "Cancel",
+  "Save": "Save",
+  "YourAge": "Your age",
+  "City": "City"
 }

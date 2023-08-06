@@ -1,5 +1,6 @@
 {
   "Cancel": "Cancel",
+  "City": "City",
   "DataLoadingError": "DataLoadingError",
   "DataLoadingErrorTip": "DataLoadingErrorTip",
   "Edit": "Edit",
@@ -7,8 +8,10 @@
   "PageName": "PageName",
   "PageName1": "PageName1",
   "Profile": "Profile",
+  "Save": "Save",
   "Your last name": "Your last name",
   "Your name": "Your name",
+  "YourAge": "YourAge",
   "YourLastName": "YourLastName",
   "YourName": "YourName",
   "aboutLinkName": "aboutLinkName",

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
@@ -17,6 +17,8 @@ interface ProfileCardProps {
     readonly?: boolean;
     onChangeFirstname: (value?: string) => void;
     onChangeLastname: (value?: string) => void;
+    onChangeAge: (value?: string) => void;
+    onChangeCity: (value?: string) => void;
 }
 
 export const ProfileCard: FC<ProfileCardProps> = (props) => {
@@ -28,8 +30,16 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         readonly,
         onChangeFirstname,
         onChangeLastname,
+        onChangeAge,
+        onChangeCity,
     } = props;
     const { t } = useTranslation('profile');
+
+    const onOnlyNumberKeyPress = useCallback((e) => {
+        if (!/[0-9]/.test(e.key)) {
+            e.preventDefault();
+        }
+    }, []);
 
     if (isLoading) {
         return (
@@ -68,6 +78,22 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     readonly={readonly}
                     placeholder={t('YourLastName')}
                     onChange={onChangeLastname}
+                />
+                <Input
+                    className={cls.input}
+                    value={data?.age}
+                    readonly={readonly}
+                    placeholder={t('YourAge')}
+                    onChange={onChangeAge}
+                    // Пробный вариант: разрешаем вводить только цифры
+                    onKeyPress={onOnlyNumberKeyPress}
+                />
+                <Input
+                    className={cls.input}
+                    value={data?.city}
+                    readonly={readonly}
+                    placeholder={t('City')}
+                    onChange={onChangeCity}
                 />
             </div>
         </div>

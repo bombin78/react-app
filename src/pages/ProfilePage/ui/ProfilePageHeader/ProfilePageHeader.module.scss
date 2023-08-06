@@ -2,7 +2,12 @@
     display: flex;
     margin-bottom: 20px;
 
-    .editBtn {
+    .editBtn,
+    .cancelBtn {
         margin-left: auto;
+    }
+
+    .cancelBtn {
+        margin-right: 10px;
     }
 }
