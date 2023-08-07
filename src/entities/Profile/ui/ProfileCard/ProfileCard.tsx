@@ -6,6 +6,7 @@ import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
 import { Loader } from 'shared/ui/Loader';
 import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -70,11 +71,14 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         <div className={classNames(cls.profileCard, {}, [className])}>
             <div className={cls.data}>
                 {data?.avatar && (
-                    <img
-                        src={data?.avatar}
-                        alt={t('ProfilePicture')}
-                    />
+                    <div className={cls.avatarWrap}>
+                        <Avatar
+                            src={data?.avatar}
+                            alt={t('ProfilePicture')}
+                        />
+                    </div>
                 )}
+
                 <Input
                     className={cls.input}
                     value={data?.first}
@@ -82,6 +86,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('YourName')}
                     onChange={onChangeFirstname}
                 />
+
                 <Input
                     className={cls.input}
                     value={data?.lastname}
@@ -89,6 +94,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('YourLastName')}
                     onChange={onChangeLastname}
                 />
+
                 <Input
                     className={cls.input}
                     value={data?.age}
@@ -98,6 +104,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     // Пробный вариант: разрешаем вводить только цифры
                     onKeyPress={onOnlyNumberKeyPress}
                 />
+
                 <Input
                     className={cls.input}
                     value={data?.city}
@@ -105,6 +112,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('City')}
                     onChange={onChangeCity}
                 />
+
                 <Input
                     className={cls.input}
                     value={data?.username}
@@ -112,6 +120,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     placeholder={t('UserName')}
                     onChange={onChangeUsername}
                 />
+
                 <Input
                     className={cls.input}
                     value={data?.avatar}

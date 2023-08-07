@@ -1,6 +1,17 @@
 {
+  "AvatarLink": "",
+  "Cancel": "",
+  "City": "",
   "DataLoadingError": "DataLoadingError",
   "DataLoadingErrorTip": "DataLoadingErrorTip",
+  "Edit": "",
+  "Profile": "",
+  "ProfilePicture": "",
+  "Save": "",
+  "UserName": "",
+  "YourAge": "",
+  "YourLastName": "",
+  "YourName": "",
   "dataLoadingError": "dataLoadingError",
   "dataLoadingErrorTip": "dataLoadingErrorTip",
   "profilePage": ""
