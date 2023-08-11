@@ -1,6 +1,6 @@
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { Mods, classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { Input } from 'shared/ui/Input';
@@ -67,8 +67,12 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         );
     }
 
+    const mods: Mods = {
+        [cls.editing]: !readonly,
+    };
+
     return (
-        <div className={classNames(cls.profileCard, {}, [className])}>
+        <div className={classNames(cls.profileCard, mods, [className])}>
             <div className={cls.data}>
                 {data?.avatar && (
                     <div className={cls.avatarWrap}>
