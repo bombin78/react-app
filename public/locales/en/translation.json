@@ -15,5 +15,7 @@
   "enterUsername": "Enter username",
   "enterPassword": "Enter password",
   "authorizationForm": "Authorization form",
-  "loginError": "You have entered an incorrect username or password"
+  "loginError": "You have entered an incorrect username or password",
+  "Currency": "Choose a currency",
+  "Country": "Choose a country"
 }

@@ -2,6 +2,8 @@
   "AvatarLink": "AvatarLink",
   "Cancel": "Cancel",
   "City": "City",
+  "Country": "",
+  "Currency": "",
   "DataLoadingError": "DataLoadingError",
   "DataLoadingErrorTip": "DataLoadingErrorTip",
   "Edit": "Edit",
