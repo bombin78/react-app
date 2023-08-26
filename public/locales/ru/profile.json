@@ -12,5 +12,10 @@
 	"City": "Город",
 	"UserName": "Ведите имя пользователя",
 	"AvatarLink": "Введите ссылку на аватар",
-	"ProfilePicture": "Аватарка"
+	"ProfilePicture": "Аватарка",
+	"IncorrectAge": "Некорректный возраст",
+	"IncorrectRegion": "Некорректный регион",
+	"NoData": "Данные не указаны",
+	"RequiredFullName": "Имя и фамилия обязательны",
+	"ServerError": "Серверная ошибка при сохранении"
 }

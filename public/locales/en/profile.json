@@ -12,5 +12,10 @@
   "City": "City",
   "UserName": "Enter user name",
   "AvatarLink": "Enter link to the avatar",
-  "ProfilePicture": "Profile picture"
+  "ProfilePicture": "Profile picture",
+  "IncorrectAge": "Incorrect age",
+  "IncorrectRegion": "Incorrect region",
+  "NoData": "Data is not specified",
+  "RequiredFullName": "First and last name are required",
+  "ServerError": "Server error when saving"
 }
