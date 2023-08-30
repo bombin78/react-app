@@ -2,7 +2,7 @@ import { LoginSchema } from '../types/loginSchema';
 import { loginActions, loginReducer } from './loginSlice';
 
 describe('loginSlice.test', () => {
-    test('rest set username', () => {
+    test('test set username', () => {
         const state: DeepPartial<LoginSchema> = { username: 'Vasya' };
         expect(loginReducer(
             state as LoginSchema,
@@ -10,7 +10,7 @@ describe('loginSlice.test', () => {
         )).toEqual({ username: 'Kolya' });
     });
 
-    test('rest set password', () => {
+    test('test set password', () => {
         const state: DeepPartial<LoginSchema> = { password: '11111' };
         expect(loginReducer(
             state as LoginSchema,

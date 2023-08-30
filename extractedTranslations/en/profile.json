@@ -1,19 +1,11 @@
 {
-  "AvatarLink": "",
-  "Cancel": "",
-  "City": "",
-  "Currency": "",
   "DataLoadingError": "DataLoadingError",
   "DataLoadingErrorTip": "DataLoadingErrorTip",
-  "Edit": "",
-  "Profile": "",
-  "ProfilePicture": "",
-  "Save": "",
-  "UserName": "",
-  "YourAge": "",
-  "YourLastName": "",
-  "YourName": "",
+  "IncorrectAge": "",
+  "IncorrectRegion": "",
+  "NoData": "",
+  "RequiredFullName": "",
+  "ServerError": "",
   "dataLoadingError": "dataLoadingError",
-  "dataLoadingErrorTip": "dataLoadingErrorTip",
-  "profilePage": ""
+  "dataLoadingErrorTip": "dataLoadingErrorTip"
 }

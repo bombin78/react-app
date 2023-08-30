@@ -17,6 +17,10 @@ export const fetchProfileData = createAsyncThunk<
         try {
             const response = await extra.api.get<Profile>('/profile');
 
+            if (!response.data) {
+                throw new Error();
+            }
+
             // По умолчанию, возвращаемые данные оборачиваются в thunkAPI.fulfillWithValue()
             return response.data;
         } catch (e) {
