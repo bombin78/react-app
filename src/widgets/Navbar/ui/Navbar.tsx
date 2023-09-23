@@ -41,7 +41,7 @@ export const Navbar = memo((props: NavbarProps) => {
                     theme={ButtonTheme.CLEAR_INVERTED}
                     onClick={onLogout}
                 >
-                    {t('logout')}
+                    {t('Logout')}
                 </Button>
             </div>
         );
@@ -54,7 +54,7 @@ export const Navbar = memo((props: NavbarProps) => {
                 theme={ButtonTheme.CLEAR_INVERTED}
                 onClick={onShowModal}
             >
-                {t('login')}
+                {t('Login')}
             </Button>
             {/* Проверить необходимость скрытия компонента LoginModal через isAuthModal */}
             {isAuthModal && (

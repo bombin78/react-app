@@ -64,8 +64,8 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
             <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
                 <Text
                     theme={TextTheme.ERROR}
-                    title={t('DataLoadingError')}
-                    text={t('DataLoadingErrorTip')}
+                    title={t('An error occurred while loading the data')}
+                    text={t('Try refreshing the page')}
                     align={TextAlign.CENTER}
                 />
             </div>
@@ -83,7 +83,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     <div className={cls.avatarWrap}>
                         <Avatar
                             src={data?.avatar}
-                            alt={t('ProfilePicture')}
+                            alt={t('Profile picture')}
                         />
                     </div>
                 )}
@@ -92,7 +92,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={cls.input}
                     value={data?.first}
                     readonly={readonly}
-                    placeholder={t('YourName')}
+                    placeholder={t('Your name')}
                     onChange={onChangeFirstname}
                 />
 
@@ -100,7 +100,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={cls.input}
                     value={data?.lastname}
                     readonly={readonly}
-                    placeholder={t('YourLastName')}
+                    placeholder={t('Your last name')}
                     onChange={onChangeLastname}
                 />
 
@@ -108,7 +108,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={cls.input}
                     value={data?.age}
                     readonly={readonly}
-                    placeholder={t('YourAge')}
+                    placeholder={t('Your age')}
                     onChange={onChangeAge}
                     // Пробный вариант: разрешаем вводить только цифры
                     onKeyPress={onOnlyNumberKeyPress}
@@ -126,7 +126,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={cls.input}
                     value={data?.username}
                     readonly={readonly}
-                    placeholder={t('UserName')}
+                    placeholder={t('Enter user name')}
                     onChange={onChangeUsername}
                 />
 
@@ -134,7 +134,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                     className={cls.input}
                     value={data?.avatar}
                     readonly={readonly}
-                    placeholder={t('AvatarLink')}
+                    placeholder={t('Enter link to the avatar')}
                     onChange={onChangeAvatar}
                 />
 

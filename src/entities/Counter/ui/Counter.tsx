@@ -26,13 +26,13 @@ export const Counter: FC = () => {
                 data-testid="increment-btn"
                 onClick={increment}
             >
-                {t('increment')}
+                {t('Increment')}
             </Button>
             <Button
                 data-testid="decrement-btn"
                 onClick={decrement}
             >
-                {t('decrement')}
+                {t('Decrement')}
             </Button>
         </div>
     );

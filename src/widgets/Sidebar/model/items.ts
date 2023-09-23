@@ -15,17 +15,17 @@ export const SidebarItemsList: SidebarItemType[] = [
     {
         path: RoutePath.main,
         Icon: MainIcon,
-        text: 'mainLinkName',
+        text: 'Main',
     },
     {
         path: RoutePath.about,
         Icon: AboutIcon,
-        text: 'aboutLinkName',
+        text: 'About us',
     },
     {
         path: RoutePath.profile,
         Icon: ProfileIcon,
-        text: 'profileLinkName',
+        text: 'Profile',
         authOnly: true,
     },
 ];
