@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "camelcase",
     "Firstname",
     "Ivanov",
     "Kolya",
@@ -9,6 +10,7 @@
     "stylelint",
     "svgr",
     "testid",
+    "typeof",
     "Vasya",
     "алиасов",
     "Алиасы",
@@ -44,5 +46,8 @@
   "stylelint.enable": true,
   "css.validate": true,
   "scss.validate": true,
-  "stylelint.validate": ["css", "scss"]
+  "stylelint.validate": ["css", "scss"],
+  "files.associations": {
+    "**/.fttemplates/**": "plaintext",
+  }
 }
