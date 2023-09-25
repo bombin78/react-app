@@ -1,8 +1,13 @@
 import { RuleSetRule } from 'webpack';
 import { buildCssLoader } from './loaders/buildCssLoader';
 import { BuildOptions } from './types/config';
+import { buildBabelLoader } from './loaders/buildBabelLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): RuleSetRule[] {
+    const {
+        isDev,
+    } = options;
+
     // https://v4.webpack.js.org/loaders/file-loader/
     // https://webpack.js.org/guides/asset-modules/
     const fileLoader = {
@@ -21,27 +26,7 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     };
 
     // https://babeljs.io/setup#installation
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                // https://i18next-extract.netlify.app/#
-                // https://i18next-extract.netlify.app/#/configuration?id=locales
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                ],
-            },
-        },
-    };
+    const babelLoader = buildBabelLoader(options);
 
     const cssLoader = buildCssLoader(isDev);
 

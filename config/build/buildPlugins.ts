@@ -4,6 +4,7 @@ import webpack, {
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins({
@@ -32,6 +33,9 @@ export function buildPlugins({
 
     if (isDev) {
         plugins.push(
+            // Плагин (ЭКСПЕРИМЕНТАЛЬНЫЙ) для включения «быстрого обновления»
+            // (также известного как Hot Reloading) для компонентов React.
+            new ReactRefreshWebpackPlugin(),
             new webpack.HotModuleReplacementPlugin(),
             // Плагин для визуализации размер выходных файлов веб-пакета с помощью
             // интерактивной масштабируемой древовидной карты
