@@ -1,8 +1,11 @@
 {
+  "Main": "Главная",
+  "About us": "О компании",
+  "Profile": "Профиль",
+  "Articles": "Статьи",
+  "Authorization form": "Форма авторизации",
   "Choose a country": "Выберите страну",
   "Choose a currency": "Выберите валюту",
-  "About us": "О компании",
-  "Authorization form": "Форма авторизации",
   "Decrement": "Вычесть 1",
   "Increment": "Добавить 1",
   "Enter password": "Введите пароль",
@@ -12,10 +15,8 @@
   "Login": "Войти",
   "Logout": "Выйти",
   "You have entered an incorrect username or password": "Вы ввели неверный логин или пароль",
-  "Main": "Главная",
   "Page not found": "Страница не найдена",
   "An unexpected error has occurred": "Произошла непредвиденная ошибка",
-  "Profile": "Профиль",
   "Refresh the page": "Обновить страницу",
   "throw an error": "Выбросить ошибку"
 }

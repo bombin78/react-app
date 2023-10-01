@@ -1,8 +1,11 @@
 {
+  "Main": "Main",
+  "About us": "About us",
+  "Profile": "Profile",
+  "Articles": "Articles",
+  "Authorization form": "Authorization form",
   "Choose a country": "Choose a country",
   "Choose a currency": "Choose a currency",
-  "About us": "About us",
-  "Authorization form": "Authorization form",
   "Decrement": "Decrement",
   "Increment": "Increment",
   "Enter password": "Enter password",
@@ -12,10 +15,8 @@
   "Login": "Login",
   "Logout": "Logout",
   "You have entered an incorrect username or password": "You have entered an incorrect username or password",
-  "Main": "Main",
   "Page not found": "Page not found",
   "An unexpected error has occurred": "An unexpected error has occurred",
-  "Profile": "Profile",
   "Refresh the page": "Refresh the page",
   "throw an error": "throw an error"
 }
