@@ -4,6 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import {
     Text,
+    TextSize,
     TextTheme,
 } from './Text';
 
@@ -88,3 +89,16 @@ OnlyTextDark.args = {
 	`,
 };
 OnlyTextDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SizeL = Template.bind({});
+SizeL.args = {
+    title: 'Some kind of title text',
+    text: `
+		A lot of some paragraph text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+	`,
+    size: TextSize.L,
+};

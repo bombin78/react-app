@@ -1,9 +1,9 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-#(не работал)npm run build:prod
-#(работал в 7.47.8)npm run lint:ts
-#(работал в 7.47.8)npm run lint:scss
-#(не работал)npm run test:unit
-#(не работал)npm run storybook:build
-#(не работал)npm run test:ui
+#(не работает)npm run build:prod
+npm run lint:ts
+npm run lint:scss
+npm run test:unit
+#(не работает)npm run storybook:build
+npm run test:ui
