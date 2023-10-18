@@ -117,13 +117,15 @@
       "id": 1,
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://img2.freepng.ru/20180612/zyg/kisspng-samsung-galaxy-a8-a8-user-login-telephone-avata-pawn-5b207282380ef1.9556063215288531222296.jpg"
     },
     {
       "id": 2,
       "username": "user",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://img2.freepng.ru/20180612/zyg/kisspng-samsung-galaxy-a8-a8-user-login-telephone-avata-pawn-5b207282380ef1.9556063215288531222296.jpg"
     }
   ],
   "profile": {

@@ -1,5 +1,4 @@
 {
-  "ARTICLE DETAILS": "ARTICLE DETAILS",
   "ARTICLES PAGE": "ARTICLES PAGE",
   "About us": "About us",
   "An error occurred while loading the article": "An error occurred while loading the article",
@@ -11,6 +10,7 @@
   "Choose a country": "Choose a country",
   "Choose a currency": "Choose a currency",
   "City": "City",
+  "Comments": "Comments",
   "Data is not specified": "Data is not specified",
   "Decrement": "Decrement",
   "Edit": "Edit",
@@ -31,6 +31,7 @@
   "Refresh the page": "Refresh the page",
   "Save": "Save",
   "Server error when saving": "Server error when saving",
+  "There are no comments": "There are no comments",
   "Try refreshing the page": "Try refreshing the page",
   "You have entered an incorrect username or password": "You have entered an incorrect username or password",
   "Your age": "Your age",

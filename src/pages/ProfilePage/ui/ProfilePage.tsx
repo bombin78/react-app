@@ -32,7 +32,7 @@ interface ProfilePageProps {
 
 const ProfilePage = memo((props: ProfilePageProps) => {
     const { className } = props;
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
 

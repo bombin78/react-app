@@ -43,7 +43,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
         onChangeCurrency,
         onChangeCountry,
     } = props;
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation();
 
     const onOnlyNumberKeyPress = useCallback((e) => {
         if (!/[0-9]/.test(e.key)) {

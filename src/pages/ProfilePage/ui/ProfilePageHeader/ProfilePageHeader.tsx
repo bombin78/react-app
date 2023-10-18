@@ -14,7 +14,7 @@ interface ProfilePageHeaderProps {
 
 export const ProfilePageHeader: FC<ProfilePageHeaderProps> = (props) => {
     const { className } = props;
-    const { t } = useTranslation('profile');
+    const { t } = useTranslation();
 
     // Если форма не находится в состоянии readonly, отображаем кнопку "Редактировать",
     // в обратном случае будем отображать кнопку "Отмена" и "Сохранить"

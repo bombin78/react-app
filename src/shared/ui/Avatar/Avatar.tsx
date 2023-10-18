@@ -34,14 +34,4 @@ export const Avatar: FC<AvatarProps> = (props) => {
             className={classNames(cls.avatar, mods, [className])}
         />
     );
-
-    // const { t } = useTranslation();
-
-    // return (
-    //     <img
-    //         className={classNames(cls.avatar, {}, [className])}
-    //         src={src}
-    //         alt={t('ProfilePicture')}
-    //     />
-    // );
 };
