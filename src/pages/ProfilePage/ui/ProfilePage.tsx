@@ -20,6 +20,8 @@ import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import { Text } from 'shared/ui/Text';
 import { TextTheme } from 'shared/ui/Text/ui/Text';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -35,6 +37,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     const { t } = useTranslation();
 
     const dispatch = useAppDispatch();
+    const { id } = useParams<{id: string}>();
 
     const formData = useSelector(getProfileForm);
     const isLoading = useSelector(getProfileIsLoading);
@@ -50,11 +53,11 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         [ValidateProfileError.SERVER_ERROR]: t('Server error when saving'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
