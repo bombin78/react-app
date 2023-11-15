@@ -92,10 +92,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     }, [dispatch]);
 
     return (
-        <DynamicModuleLoader
-            removeAfterUnmount
-            reducers={reducers}
-        >
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length && validateErrors.map((err) => (

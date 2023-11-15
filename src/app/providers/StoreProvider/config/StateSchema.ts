@@ -8,9 +8,10 @@ import { CombinedState } from 'redux';
 import { NavigateOptions, To } from 'react-router-dom';
 import { AxiosInstance } from 'axios';
 import { CounterSchema } from 'entities/Counter';
-import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
+import { AddCommentFormSchema } from 'features/AddCommentForm';
+import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 
@@ -20,6 +21,7 @@ export interface StateSchema {
 
 	// Asynchronous reducers
 	loginForm?: LoginSchema;
+    addCommentForm?: AddCommentFormSchema;
 	profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailsComments?: ArticleDetailsCommentsSchema;

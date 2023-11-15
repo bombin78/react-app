@@ -29,7 +29,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 15,
       "createdAt": "10.01.2024",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -110,6 +112,24 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "1"
+    },
+    {
+      "articleId": "1",
+      "userId": 1,
+      "text": "123qwerqw",
+      "id": "61Im2fL"
+    },
+    {
+      "articleId": "1",
+      "userId": 2,
+      "text": "Сообщение от user",
+      "id": "q2nqN8J"
+    },
+    {
+      "articleId": "1",
+      "userId": 2,
+      "text": "привет",
+      "id": "Z4tWEj7"
     }
   ],
   "users": [
@@ -118,22 +138,22 @@
       "username": "admin",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://img2.freepng.ru/20180612/zyg/kisspng-samsung-galaxy-a8-a8-user-login-telephone-avata-pawn-5b207282380ef1.9556063215288531222296.jpg"
+      "avatar": "https://avt-8.foto.mail.ru/mail/nyu_igor_83/_avatar180?"
     },
     {
       "id": 2,
       "username": "user",
       "password": "123",
       "role": "USER",
-      "avatar": "https://img2.freepng.ru/20180612/zyg/kisspng-samsung-galaxy-a8-a8-user-login-telephone-avata-pawn-5b207282380ef1.9556063215288531222296.jpg"
+      "avatar": "https://w7.pngwing.com/pngs/364/361/png-transparent-account-avatar-profile-user-avatars-icon.png"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Ivan",
-      "lastname": "Ivanov",
-      "age": 42,
+      "first": "Jason",
+      "lastname": "Bourne",
+      "age": 53,
       "currency": "CNY",
       "country": "China",
       "city": "Saint Petersburg",
@@ -149,7 +169,7 @@
       "country": "Russia",
       "city": "Moscow",
       "username": "user",
-      "avatar": "https://img2.freepng.ru/20180612/zyg/kisspng-samsung-galaxy-a8-a8-user-login-telephone-avata-pawn-5b207282380ef1.9556063215288531222296.jpg"
+      "avatar": "https://w7.pngwing.com/pngs/364/361/png-transparent-account-avatar-profile-user-avatars-icon.png"
     }
   ]
 }

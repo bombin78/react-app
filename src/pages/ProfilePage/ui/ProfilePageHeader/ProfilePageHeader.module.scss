@@ -2,12 +2,16 @@
     display: flex;
     margin-bottom: 20px;
 
-    .editBtn,
-    .cancelBtn {
-        margin-left: auto;
-    }
+    // .editBtn,
+    // .cancelBtn {
+    //     margin-left: auto;
+    // }
 
     .cancelBtn {
         margin-right: 10px;
     }
+}
+
+.btnsWrapper {
+    margin-left: auto;
 }
