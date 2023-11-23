@@ -38,5 +38,6 @@
 			"",
 		],
 		"description": "Create template test"
-	} 
+	}
+	// Добавить сниппеты для asyncThunk и slice
 }

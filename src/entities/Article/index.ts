@@ -1,10 +1,8 @@
-export {
-    ArticleList,
-} from './ui/ArticleList/ArticleList';
+export { ArticleList } from './ui/ArticleList/ArticleList';
 
-export {
-    ArticleDetails,
-} from './ui/ArticleDetails/ArticleDetails';
+export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
+
+export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 
 export {
     Article,
