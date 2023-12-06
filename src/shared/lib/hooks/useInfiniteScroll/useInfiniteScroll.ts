@@ -3,46 +3,51 @@ import { MutableRefObject, useEffect } from 'react';
 
 export interface UseInfiniteScrollOptions {
 	callback?: () => void;
-	// Элемент, за пересечением с областью видимости которого будем наблюдать
-	triggerRef: MutableRefObject<HTMLElement>;
 	// Wrapper или root - элемент, внутри которого будет действовать скролл
 	wrapperRef: MutableRefObject<HTMLElement>;
+	// Элемент, за пересечением с областью видимости которого будем наблюдать
+	triggerRef: MutableRefObject<HTMLElement>;
 }
 
 export function useInfiniteScroll({
     callback,
-    triggerRef,
     wrapperRef,
+    triggerRef,
 }: UseInfiniteScrollOptions) {
     useEffect(() => {
         let observer: IntersectionObserver | null = null;
+        // Чтобы wrapperRef.current и triggerRef.current были доступны после того,
+        // как компонент демонтировался и можно было отписаться от triggerRef.current
+        // создаем переменные wrapperElement и triggerElement
+        const wrapperElement = wrapperRef.current;
+        const triggerElement = triggerRef.current;
 
         if (callback) {
             const options = {
-                root: wrapperRef.current,
-                // C rootMargin = '0px' и отсутствием отступов у блока (triggerRef)
-                // observer.observe(triggerRef.current) не фиксирует появление блока
-                // (triggerRef) в области блока wrapperRef
+                root: wrapperElement,
+                // C rootMargin = '0px' и отсутствием отступов у блока (triggerElement)
+                // observer.observe(triggerElement) не фиксирует появление блока
+                // (triggerElement) в области блока wrapperElement
                 rootMargin: '1px',
                 threshold: 1.0,
             };
 
             observer = new IntersectionObserver(([entry]) => {
-            // Чтобы callback срабатывал только при появлении triggerRef в области wrapperRef
-            // Без этого условия он срабатывает также при исчезновении из области wrapperRef
+            // Чтобы callback срабатывал только при появлении triggerElement в области wrapperElement
+            // Без этого условия он срабатывает также при исчезновении из области wrapperElement
                 if (entry.isIntersecting) {
                     callback();
                 }
             }, options);
 
-            observer.observe(triggerRef.current);
+            observer.observe(triggerElement);
         }
 
         // Для избежания утечек памяти при размонтировании компонента, нужно удалить наблюдатель
         return () => {
-            if (observer) {
+            if (observer && triggerElement) {
                 // eslint-disable-next-line react-hooks/exhaustive-deps
-                observer.unobserve(triggerRef.current);
+                observer.unobserve(triggerElement);
             }
         };
     }, [callback, triggerRef, wrapperRef]);
