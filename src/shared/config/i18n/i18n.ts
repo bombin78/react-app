@@ -10,7 +10,9 @@ i18n
     .init({
         lng: 'ru',
         fallbackLng: 'ru',
-        debug: __IS_DEV__,
+        // Отключаем вывод информации в консоль
+        // debug: __IS_DEV__,
+        debug: false,
 
         interpolation: {
             escapeValue: false,

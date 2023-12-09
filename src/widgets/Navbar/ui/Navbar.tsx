@@ -57,7 +57,7 @@ export const Navbar = memo((props: NavbarProps) => {
             >
                 {t('Login')}
             </Button>
-            {/* Проверить необходимость скрытия компонента LoginModal через isAuthModal */}
+            {/* TODO: Проверить необходимость скрытия компонента LoginModal через isAuthModal */}
             {isAuthModal && (
                 <LoginModal
                     isOpen={isAuthModal}
