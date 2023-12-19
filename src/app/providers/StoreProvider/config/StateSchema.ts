@@ -14,10 +14,12 @@ import { ProfileSchema } from 'entities/Profile';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { ArticlesPageSchema } from 'pages/ArticlesPage';
+import { UISchema } from 'features/UI/model/types/uiSchema';
 
 export interface StateSchema {
 	counter: CounterSchema;
 	user: UserSchema;
+    ui: UISchema;
 
 	// Asynchronous reducers
 	loginForm?: LoginSchema;

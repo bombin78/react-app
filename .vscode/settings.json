@@ -35,6 +35,7 @@
     "редьюсеры",
     "скриншотные",
     "скролл",
+    "скролла",
     "слайсе",
     "табов"
   ],
@@ -42,8 +43,8 @@
   "i18n-ally.keystyle": "flat",
   "eslint.enable": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": true
+    "source.fixAll.eslint": "explicit",
+    "source.fixAll.stylelint": "explicit"
   },
   "eslint.options": { "overrideConfigFile": "./.eslintrc.js" },
   "eslint.nodePath": "./node_modules",
