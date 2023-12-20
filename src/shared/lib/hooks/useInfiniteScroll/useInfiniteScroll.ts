@@ -25,10 +25,13 @@ export function useInfiniteScroll({
         if (callback) {
             const options = {
                 root: wrapperElement,
+                // TODO: выбрать какой вариант будет лучше
                 // C rootMargin = '0px' и отсутствием отступов у блока (triggerElement)
-                // observer.observe(triggerElement) не фиксирует появление блока
-                // (triggerElement) в области блока wrapperElement
-                rootMargin: '1px',
+                // observer.observe(triggerElement) не фиксирует появление блока (triggerElement)
+                // в области блока wrapperElement. Для решения этой проблемы нужно либо установить
+                // здесь rootMargin: '1px', либо добавить класс cls.trigger устанавливающий высоту
+                // и отступы, как это сейчас реализовано в компоненте "src/widgets/Page/Page.tsx"
+                rootMargin: '0px',
                 threshold: 1.0,
             };
 
