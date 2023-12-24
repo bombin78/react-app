@@ -1,3 +1,10 @@
 {
-	"ARTICLES PAGE": "СТРАНИЦА СТАТЕЙ"
+	"ARTICLES PAGE": "СТРАНИЦА СТАТЕЙ",
+	"Sort by": "Сортировать по",
+	"Search": "Поиск",
+	"ascending order": "возрастанию",
+	"descending order": "убыванию",
+	"creation date": "дате создания",
+	"title": "названию",
+	"views": "просмотрам"
 }

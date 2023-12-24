@@ -39,13 +39,21 @@
   },
   "Refresh the page": "Refresh the page",
   "Save": "Save",
+  "Search": "Search",
   "Send": "Send",
   "Server error when saving": "Server error when saving",
+  "Sort by": "Sort by",
   "There are no comments": "There are no comments",
   "Try refreshing the page": "Try refreshing the page",
   "You have entered an incorrect username or password": "You have entered an incorrect username or password",
   "Your age": "Your age",
   "Your last name": "Your last name",
   "Your name": "Your name",
-  "throw an error": "throw an error"
+  "ascending order": "ascending order",
+  "by": "by",
+  "creation date": "creation date",
+  "descending order": "descending order",
+  "throw an error": "throw an error",
+  "title": "title",
+  "views": "views"
 }
