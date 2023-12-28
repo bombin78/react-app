@@ -32,9 +32,7 @@ export const fetchNextArticlesPage = createAsyncThunk<
             // Меняем номер страница на следующий по порядку и
             dispatch(articlesPageActions.setPage(pageNum + 1));
             // подгружаем данные для этой страницы
-            dispatch(fetchArticlesList({
-                page: pageNum + 1,
-            }));
+            dispatch(fetchArticlesList({}));
         }
     },
 );

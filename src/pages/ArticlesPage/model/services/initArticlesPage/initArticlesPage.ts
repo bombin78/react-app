@@ -27,9 +27,7 @@ export const initArticlesPage = createAsyncThunk<
             // Порядок dispatch такой, чтобы сначала инициализировать
             // limit, а уже за тем подгружать данные
             dispatch(articlesPageActions.initState());
-            dispatch(fetchArticlesList({
-                page: 1,
-            }));
+            dispatch(fetchArticlesList({}));
         }
     },
 );

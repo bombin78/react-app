@@ -63,18 +63,35 @@ const articlesPageSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
-            .addCase(fetchArticlesList.pending, (state) => {
+            .addCase(fetchArticlesList.pending, (
+                state,
+                action,
+            ) => {
                 state.error = undefined;
                 state.isLoading = true;
+
+                if (action.meta.arg.replace) {
+                    // Для очистки массива либо передаем пустой массив в setAll
+                    // либо используем метод removeAll без второго аргумента
+                    articlesAdapter.removeAll(state);
+                }
             })
             .addCase(fetchArticlesList.fulfilled, (
                 state,
-                action: PayloadAction<Article[]>,
+                action,
             ) => {
                 state.isLoading = false;
-                articlesAdapter.setMany(state, action.payload);
                 // !!!: флаг hasMore по правильному должен возвращаться с бэкенда, а не формироваться в слайсе
                 state.hasMore = action.payload.length > 0;
+
+                if (action.meta.arg.replace) {
+                    // получаем новый массив с постами (setAll)
+                    articlesAdapter.setAll(state, action.payload);
+                } else {
+                    // либо добавляем новый массив с постами в конец
+                    // массива (setMany) для бесконечной ленты
+                    articlesAdapter.setMany(state, action.payload);
+                }
             })
             .addCase(fetchArticlesList.rejected, (state, action) => {
                 state.isLoading = false;
