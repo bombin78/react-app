@@ -82,7 +82,7 @@ const articlesPageSlice = createSlice({
             ) => {
                 state.isLoading = false;
                 // !!!: флаг hasMore по правильному должен возвращаться с бэкенда, а не формироваться в слайсе
-                state.hasMore = action.payload.length > 0;
+                state.hasMore = action.payload.length >= state.limit;
 
                 if (action.meta.arg.replace) {
                     // получаем новый массив с постами (setAll)

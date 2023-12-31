@@ -1,5 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
+import { ArticleSortField } from 'entities/Article';
+import { SortOrder } from 'shared/types';
 import { getArticlesPageInited } from '../../selectors/articlesPageSelectors';
 import { fetchArticlesList } from '../fetchArticlesList/fetchArticlesList';
 import { articlesPageActions } from '../../slices/articlesPageSlice';
@@ -9,11 +11,11 @@ import { articlesPageActions } from '../../slices/articlesPageSlice';
 // getState и другой AsyncThunk (fetchArticlesList)
 export const initArticlesPage = createAsyncThunk<
     void,
-    void,
+    URLSearchParams,
     ThunkConfig<string>
 >(
     'articlesPage/initArticlesPage',
-    async (_, thunkAPI) => {
+    async (searchParams, thunkAPI) => {
         const {
             getState,
             dispatch,
@@ -24,6 +26,22 @@ export const initArticlesPage = createAsyncThunk<
 
         // Если state еще не проинициализирован
         if (!inited) {
+            const orderFromUrl = searchParams.get('order') as SortOrder;
+            const sortFromUrl = searchParams.get('sort') as ArticleSortField;
+            const searchFromUrl = searchParams.get('search');
+
+            if (orderFromUrl) {
+                dispatch(articlesPageActions.setOrder(orderFromUrl));
+            }
+
+            if (sortFromUrl) {
+                dispatch(articlesPageActions.setSort(sortFromUrl));
+            }
+
+            if (searchFromUrl) {
+                dispatch(articlesPageActions.setSearch(searchFromUrl));
+            }
+
             // Порядок dispatch такой, чтобы сначала инициализировать
             // limit, а уже за тем подгружать данные
             dispatch(articlesPageActions.initState());
