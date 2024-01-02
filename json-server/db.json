@@ -378,13 +378,13 @@
     {
       "id": "16",
       "userId": "1",
-      "title": "Python news 16",
-      "subtitle": "Что нового в Python за 2023 год?",
-      "img": "https://w7.pngwing.com/pngs/891/677/png-transparent-python-logos-and-brands-line-filled-icon.png",
+      "title": "Научная статья",
+      "subtitle": "Наука",
+      "img": "https://images.satu.kz/194895382_w640_h640_kabinet-himii.jpg",
       "views": 1504,
       "createdAt": "11.02.2024",
       "type": [
-        "IT"
+        "SCIENCE"
       ],
       "blocks": [
         {
@@ -402,13 +402,13 @@
     {
       "id": "17",
       "userId": "1",
-      "title": "Kotlin news 17",
-      "subtitle": "Что нового в Kotlin за 2023 год?",
-      "img": "https://miro.medium.com/max/1200/1*FNakkrty3kjOvNU8m5iQfw.png",
+      "title": "Экономическая статья",
+      "subtitle": "Экономика",
+      "img": "https://tverlife.ru/wp-content/uploads/2020/02/1519576242_ekonomika-i-osnovnye-ponyatiya-ekonomiki-1540x1022_c.jpg",
       "views": 100,
       "createdAt": "15.01.2024",
       "type": [
-        "IT"
+        "ECONOMICS"
       ],
       "blocks": [
         {

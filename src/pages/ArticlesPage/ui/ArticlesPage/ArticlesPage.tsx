@@ -41,6 +41,9 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
     const isLoading = useSelector(getArticlesPageIsLoading);
     const error = useSelector(getArticlesPageError);
     const view = useSelector(getArticlesPageView);
+
+    // TODO: сделать получение параметров без использования
+    // 'react-router-dom' так как уже используем addQueryParams
     const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {

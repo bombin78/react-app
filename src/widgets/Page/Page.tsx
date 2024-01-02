@@ -3,6 +3,7 @@ import {
     ReactNode,
     UIEvent,
     useRef,
+    memo,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
@@ -21,7 +22,7 @@ interface PageProps {
     onScrollEnd?: () => void;
 }
 
-export const Page = (props: PageProps) => {
+export const Page = memo((props: PageProps) => {
     const {
         className,
         children,
@@ -66,4 +67,4 @@ export const Page = (props: PageProps) => {
             {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
         </section>
     );
-};
+});
