@@ -69,10 +69,10 @@ module.exports = {
         // только внутри jsx (внутри jsx, за исключением атрибутов: 'data-testid', 'to')
         'i18next/no-literal-string': [2, {
             markupOnly: true,
-            ignoreAttribute: ['data-testid', 'to'],
+            ignoreAttribute: ['data-testid', 'to', 'target'],
         }],
         // Проверка максимальной длины: отключаем проверку комментариев
-        'max-len': [2, { ignoreComments: true, code: 120 }],
+        'max-len': [2, { ignoreComments: true, code: 125 }],
         // Отключаем два правила (jsx-a11y) для проверки семантики
         'jsx-a11y/no-static-element-interactions': 'off',
         'jsx-a11y/click-events-have-key-events': 'off',
@@ -87,6 +87,7 @@ module.exports = {
         'no-undef': 'off',
         // Отключаем запрет использования индекса массива в ключах
         'react/no-array-index-key': 'off',
+        'arrow-body-style': 'off',
     },
     // Список глобальных переменных
     globals: {

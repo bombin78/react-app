@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Text } from 'shared/ui/Text';
@@ -9,6 +9,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button';
 import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { AppLink } from 'shared/ui/AppLink';
 import cls from './ArticleListItem.module.scss';
 import {
     Article,
@@ -24,6 +25,7 @@ interface ArticleListItemProps {
     className?: string;
     article: Article;
     view: ArticleView;
+    target?: HTMLAttributeAnchorTarget;
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
@@ -31,13 +33,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         className,
         article,
         view,
+        target,
     } = props;
     const { t } = useTranslation();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
-    const onOpenArticle = useCallback(() => {
-        navigate(RoutePath.articleDetails + article.id);
-    }, [article.id, navigate]);
+    // const onOpenArticle = useCallback(() => {
+    //     navigate(RoutePath.articleDetails + article.id);
+    // }, [article.id, navigate]);
 
     const types = (
         <Text
@@ -100,12 +103,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         />
                     )}
                     <div className={cls.footer}>
-                        <Button
-                            theme={ButtonTheme.OUTLINE}
-                            onClick={onOpenArticle}
+                        <AppLink
+                            target={target}
+                            to={RoutePath.articleDetails + article.id}
                         >
-                            {t('Read more...')}
-                        </Button>
+                            <Button theme={ButtonTheme.OUTLINE}>
+                                {t('Read more...')}
+                            </Button>
+                        </AppLink>
                         {views}
                     </div>
                 </Card>
@@ -115,16 +120,15 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     // Вывод плиткой
     return (
-        <div
+        <AppLink
             className={classNames(cls.articleListItem, {}, [
                 className,
                 cls[view],
             ])}
+            target={target}
+            to={RoutePath.articleDetails + article.id}
         >
-            <Card
-                className={cls.card}
-                onClick={onOpenArticle}
-            >
+            <Card className={cls.card}>
                 <div className={cls.imageWrapper}>
                     <img
                         className={cls.img}
@@ -145,6 +149,6 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     text={article.title}
                 />
             </Card>
-        </div>
+        </AppLink>
     );
 });
