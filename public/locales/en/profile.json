@@ -1,20 +1,3 @@
 {
-  "Enter link to the avatar": "Enter link to the avatar",
-  "Cancel": "Cancel",
-  "City": "City",
-  "An error occurred while loading the data": "An error occurred while loading the data",
-  "Try refreshing the page": "Try refreshing the page",
-  "Edit": "Edit",
-  "Incorrect age": "Incorrect age",
-  "Incorrect region": "Incorrect region",
-  "Data is not specified": "Data is not specified",
-  "Profile": "Profile",
-  "Profile picture": "Profile picture",
-  "First and last name are required": "First and last name are required",
-  "Save": "Save",
-  "Server error when saving": "Server error when saving",
-  "Enter user name": "Enter user name",
-  "Your age": "Your age",
-  "Your last name": "Your last name",
-  "Your name": "Your name"
+  "Profile": "Profile"
 }
