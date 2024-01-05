@@ -56,5 +56,9 @@
 	"descending order": "убыванию",
 	"creation date": "дате создания",
 	"title": "названию",
-	"views": "просмотрам"
+	"views": "просмотрам",
+  "Editing an article with an ID = ": "Редактирование статьи с ID =",
+  "Creating a new article": "Создание новой статьи",
+  "React17 App": "React17 App",
+  "Create an article": "Создать статью"
 }
