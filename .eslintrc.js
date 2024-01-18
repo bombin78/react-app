@@ -23,6 +23,7 @@ module.exports = {
         '@typescript-eslint',
         'i18next',
         'react-hooks',
+        'ab-fsd',
     ],
     rules: {
         // Устанавливаем определенный стиль отступа (4 пробела) для обычного когда.
@@ -88,6 +89,7 @@ module.exports = {
         // Отключаем запрет использования индекса массива в ключах
         'react/no-array-index-key': 'off',
         'arrow-body-style': 'off',
+        'ab-fsd/path-checker': 'error',
     },
     // Список глобальных переменных
     globals: {
