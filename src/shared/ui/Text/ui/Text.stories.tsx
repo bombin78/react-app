@@ -102,3 +102,29 @@ SizeL.args = {
 	`,
     size: TextSize.L,
 };
+
+export const SizeM = Template.bind({});
+SizeM.args = {
+    title: 'Some kind of title text',
+    text: `
+		A lot of some paragraph text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+	`,
+    size: TextSize.M,
+};
+
+export const SizeS = Template.bind({});
+SizeS.args = {
+    title: 'Some kind of title text',
+    text: `
+		A lot of some paragraph text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+		text text text text text text text text text text text text text text
+	`,
+    size: TextSize.S,
+};
