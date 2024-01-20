@@ -8,6 +8,7 @@ import { TextAlign, TextTheme } from 'shared/ui/Text/ui/Text';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
+import { HStack, VStack } from 'shared/ui/Stack';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -53,22 +54,30 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.loading])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.profileCard, {}, [className, cls.loading])}
+            >
                 <Loader />
-            </div>
+            </HStack>
         );
     }
 
     if (error) {
         return (
-            <div className={classNames(cls.profileCard, {}, [className, cls.error])}>
+            <HStack
+                max
+                justify="center"
+                className={classNames(cls.profileCard, {}, [className, cls.error])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('An error occurred while loading the data')}
                     text={t('Try refreshing the page')}
                     align={TextAlign.CENTER}
                 />
-            </div>
+            </HStack>
         );
     }
 
@@ -77,81 +86,87 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
     };
 
     return (
-        <div className={classNames(cls.profileCard, mods, [className])}>
-            <div className={cls.data}>
-                {data?.avatar && (
-                    <div className={cls.avatarWrap}>
-                        <Avatar
-                            src={data?.avatar}
-                            alt={t('Profile picture')}
-                        />
-                    </div>
-                )}
+        <VStack
+            max
+            gap="8"
+            className={classNames(cls.profileCard, mods, [className])}
+        >
+            {data?.avatar && (
+                <HStack
+                    max
+                    justify="center"
+                    className={cls.avatarWrap}
+                >
+                    <Avatar
+                        src={data?.avatar}
+                        alt={t('Profile picture')}
+                    />
+                </HStack>
+            )}
 
-                <Input
-                    className={cls.input}
-                    value={data?.first}
-                    readonly={readonly}
-                    placeholder={t('Your name')}
-                    onChange={onChangeFirstname}
-                />
+            <Input
+                className={cls.input}
+                value={data?.first}
+                readonly={readonly}
+                placeholder={t('Your name')}
+                onChange={onChangeFirstname}
+            />
 
-                <Input
-                    className={cls.input}
-                    value={data?.lastname}
-                    readonly={readonly}
-                    placeholder={t('Your last name')}
-                    onChange={onChangeLastname}
-                />
+            <Input
+                className={cls.input}
+                value={data?.lastname}
+                readonly={readonly}
+                placeholder={t('Your last name')}
+                onChange={onChangeLastname}
+            />
 
-                <Input
-                    className={cls.input}
-                    value={data?.age}
-                    readonly={readonly}
-                    placeholder={t('Your age')}
-                    onChange={onChangeAge}
-                    // Пробный вариант: разрешаем вводить только цифры
-                    onKeyPress={onOnlyNumberKeyPress}
-                />
+            <Input
+                className={cls.input}
+                value={data?.age}
+                readonly={readonly}
+                placeholder={t('Your age')}
+                onChange={onChangeAge}
+                // Пробный вариант: разрешаем вводить только цифры
+                onKeyPress={onOnlyNumberKeyPress}
+            />
 
-                <Input
-                    className={cls.input}
-                    value={data?.city}
-                    readonly={readonly}
-                    placeholder={t('City')}
-                    onChange={onChangeCity}
-                />
+            <Input
+                className={cls.input}
+                value={data?.city}
+                readonly={readonly}
+                placeholder={t('City')}
+                onChange={onChangeCity}
+            />
 
-                <Input
-                    className={cls.input}
-                    value={data?.username}
-                    readonly={readonly}
-                    placeholder={t('Enter user name')}
-                    onChange={onChangeUsername}
-                />
+            <Input
+                className={cls.input}
+                value={data?.username}
+                readonly={readonly}
+                placeholder={t('Enter user name')}
+                onChange={onChangeUsername}
+            />
 
-                <Input
-                    className={cls.input}
-                    value={data?.avatar}
-                    readonly={readonly}
-                    placeholder={t('Enter link to the avatar')}
-                    onChange={onChangeAvatar}
-                />
+            <Input
+                className={cls.input}
+                value={data?.avatar}
+                readonly={readonly}
+                placeholder={t('Enter link to the avatar')}
+                onChange={onChangeAvatar}
+            />
 
-                <CurrencySelect
-                    className={cls.input}
-                    value={data?.currency}
-                    readonly={readonly}
-                    onChange={onChangeCurrency}
-                />
+            <CurrencySelect
+                className={cls.input}
+                value={data?.currency}
+                readonly={readonly}
+                onChange={onChangeCurrency}
+            />
 
-                <CountrySelect
-                    className={cls.input}
-                    value={data?.country}
-                    readonly={readonly}
-                    onChange={onChangeCountry}
-                />
-            </div>
-        </div>
+            <CountrySelect
+                className={cls.input}
+                value={data?.country}
+                readonly={readonly}
+                onChange={onChangeCountry}
+            />
+        </VStack>
     );
 };
