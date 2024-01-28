@@ -10,7 +10,8 @@
 // которым могут пользоваться люди с ограниченными возможностями при 'outline: none'
 // не работают события hover и focus, т.е. выбор элемента будет не виден,
 // в отличие от 'outline-color: transparent'.
-// При актуальности проблемы, заменить outline: none на outline-color: transparent
+// При актуальности проблемы, заменить (по всему проекту) outline: none на
+// outline-color: transparent
 .select {
     padding: {
         top: 2px;
