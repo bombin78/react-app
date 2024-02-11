@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { LOCAL_STORAGE_THEME_KEY } from '../../app/providers/ThemeProvider/lib/ThemeContext';
+import { USER_LOCALSTORAGE_KEY } from 'shared/const/localstorage';
 
 // Создаем инстанс axios
 export const $api = axios.create({
@@ -10,7 +10,7 @@ export const $api = axios.create({
 // добавляем поле authorization, чтобы оно не было пустым в запросе
 $api.interceptors.request.use((config) => {
     if (config.headers) {
-        config.headers.authorization = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) || '';
+        config.headers.authorization = localStorage.getItem(USER_LOCALSTORAGE_KEY) || '';
     }
     return config;
 });
