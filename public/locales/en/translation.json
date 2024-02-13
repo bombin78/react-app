@@ -61,5 +61,6 @@
   "Editing an article with an ID = ": "Editing an article with an ID = ",
   "Creating a new article": "Creating a new article",
   "React17 App": "React17 App",
-  "Create an article": "Create an article"
+  "Create an article": "Create an article",
+  "Error loading articles": "Error loading articles"
 }

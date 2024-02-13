@@ -49,7 +49,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     const validateErrorTranslates = {
         [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
-        [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect aegion'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('Incorrect region'),
         [ValidateProfileError.INCORRECT_USER_DATA]: t('First and last name are required'),
         [ValidateProfileError.NO_DATA]: t('Data is not specified'),
         [ValidateProfileError.SERVER_ERROR]: t('Server error when saving'),
