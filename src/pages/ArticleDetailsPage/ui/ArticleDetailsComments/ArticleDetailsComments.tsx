@@ -8,6 +8,7 @@ import { TextSize } from 'shared/ui/Text/ui/Text';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { CommentList } from 'entities/Comment';
+import { VStack } from 'shared/ui/Stack';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
@@ -38,7 +39,11 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     });
 
     return (
-        <div className={classNames('', {}, [className])}>
+        <VStack
+            max
+            gap="16"
+            className={classNames('', {}, [className])}
+        >
             <Text
                 size={TextSize.L}
                 title={t('Comments')}
@@ -48,6 +53,6 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
                 isLoading={commentIsLoading}
                 comments={comments}
             />
-        </div>
+        </VStack>
     );
 });

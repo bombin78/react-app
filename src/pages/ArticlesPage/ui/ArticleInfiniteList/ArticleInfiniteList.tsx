@@ -24,7 +24,7 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
     if (error) {
         return (
-            <Text>{t('Error loading articles')}</Text>
+            <Text text={t('Error loading articles')} />
         );
     }
 

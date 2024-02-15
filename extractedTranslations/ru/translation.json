@@ -31,8 +31,8 @@
   "Error loading articles": "Error loading articles",
   "First and last name are required": "First and last name are required",
   "IT": "IT",
-  "Incorrect region": "Incorrect region",
   "Incorrect age": "Incorrect age",
+  "Incorrect region": "Incorrect region",
   "Increment": "Increment",
   "Login": "Login",
   "Logout": "Logout",
@@ -41,6 +41,7 @@
   "No articles found": "No articles found",
   "Page not found": "Page not found",
   "Profile": "Profile",
+  "Profile not found": "Profile not found",
   "Profile picture": "Profile picture",
   "React17 App": "React17 App",
   "Read more": {

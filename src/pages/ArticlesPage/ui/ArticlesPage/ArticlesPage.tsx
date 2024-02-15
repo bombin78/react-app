@@ -48,7 +48,7 @@ const ArticlesPage: FC<ArticlesPageProps> = (props) => {
                 onScrollEnd={onLoadNextPart}
             >
                 <ArticlesPageFilters />
-                <ArticleInfiniteList />
+                <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );

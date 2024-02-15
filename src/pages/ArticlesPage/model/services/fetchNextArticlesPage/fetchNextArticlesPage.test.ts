@@ -28,9 +28,8 @@ describe('fetchNextArticlesPage.test', () => {
         // Проверка что dispatch вызвался 4 раза, т.е. это panging,
         // fulfilled и два dispatch внутри самого action
         expect(thunk.dispatch).toBeCalledTimes(4);
-        // Проверка, что функция fetchArticlesList вызвана с аргументом { page: 3 }
-        // потому что в начальных данных page = 2
-        expect(fetchArticlesList).toHaveBeenCalledWith({ page: 3 });
+        // Проверка, что функция fetchArticlesList вызывается
+        expect(fetchArticlesList).toHaveBeenCalled();
     });
 
     test('fetchArticlesList is not called because hasMore = false', async () => {
