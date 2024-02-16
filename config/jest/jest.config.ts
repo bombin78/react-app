@@ -1,6 +1,7 @@
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
+ * https://www.npmjs.com/package/jest-html-reporters
  */
 
 import path from 'path';
@@ -71,6 +72,18 @@ export default {
     // The glob patterns Jest uses to detect test files
     testMatch: [
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    ],
+
+    // Настройка Jest для обработки результатов теста и его вывода в виде html отчета
+    // https://www.npmjs.com/package/jest-html-reporters
+    reporters: [
+        'default',
+        ['jest-html-reporters', {
+            publicPath: '<rootDir>/reports/unit',
+            filename: 'report.html',
+            openReport: true,
+            inlineSource: true,
+        }],
     ],
 
     // All imported modules in your tests should be mocked automatically
