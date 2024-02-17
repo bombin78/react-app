@@ -1,3 +1,4 @@
+// TODO: добавить в тесты все поля ввода (сейчас добавлены только поля для имени и фамилии)
 import { FC, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Mods, classNames } from 'shared/lib/classNames/classNames';
@@ -110,6 +111,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 readonly={readonly}
                 placeholder={t('Your name')}
                 onChange={onChangeFirstname}
+                data-testid="ProfileCard.firstname"
             />
 
             <Input
@@ -118,6 +120,7 @@ export const ProfileCard: FC<ProfileCardProps> = (props) => {
                 readonly={readonly}
                 placeholder={t('Your last name')}
                 onChange={onChangeLastname}
+                data-testid="ProfileCard.lastname"
             />
 
             <Input
