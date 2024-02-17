@@ -22,9 +22,10 @@ export const ArticleRecommendationList = memo((
         data: articles,
     } = useArticleRecommendationList(3);
 
-    if (isLoading || error) {
+    if (isLoading || error || !articles) {
         // TODO: в случае с isLoading здесь необходимо отрисовывать спиннер,
-        // в случае с error необходимо отрисовывать заглушку для ошибки.
+        // в случае с error необходимо отрисовывать заглушку для ошибки, а
+        // в случае отсутствия статей - заглушку для случая с их отсутствием
         return null;
     }
 
@@ -40,6 +41,7 @@ export const ArticleRecommendationList = memo((
             <ArticleList
                 articles={articles}
                 target="_blank"
+                virtualized={false}
             />
         </VStack>
     );
