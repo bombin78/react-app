@@ -24,13 +24,17 @@ export const CommentCard = memo((props: CommentCardProps) => {
 
     if (isLoading) {
         return (
-            <div className={classNames(cls.commentCard, {}, [className, cls.loading])}>
+            <VStack
+                max
+                gap="8"
+                className={classNames(cls.commentCard, {}, [className, cls.loading])}
+            >
                 <div className={cls.header}>
                     <Skeleton height={30} width={30} border="50%" />
                     <Skeleton className={cls.username} height={16} width={100} />
                 </div>
                 <Skeleton className={cls.text} width="100%" height={50} />
-            </div>
+            </VStack>
         );
     }
 
