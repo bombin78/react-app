@@ -62,5 +62,7 @@
   "React17 App": "React17 App",
   "Create an article": "Создать статью",
   "Error loading articles": "Ошибка при загрузке статей",
-  "Profile not found": "Профиль не найден"
+  "Profile not found": "Профиль не найден",
+  "Admin panel": "Админ панель",
+  "You do not have access to this page": "У вас нет доступа к этой странице"
 }
