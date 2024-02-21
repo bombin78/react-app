@@ -1,4 +1,4 @@
-# React-app-2023
+# React17-app
 
 ## Lints and fixes files
 ```
